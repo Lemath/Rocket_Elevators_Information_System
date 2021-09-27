@@ -420,27 +420,27 @@
 									<h3>Which Package Are You Going For?</h3>
 
 									<label class="radio">
-										<input type="radio" name="selection-btn" value="standard-btn">
+										<input type="radio" name="selection-btn" class="standard-btn" id="standard-btn" >
 										<i></i> Standard Package
 										<span class="text-muted"> (7565$/Elevator) </span>
 									</label>
 									
 									<label class="radio">
-										<input type="radio" name="selection-btn" value="premium-btn">
+										<input type="radio" name="selection-btn" class="premium-btn">
 										<i></i> Premium Package
 										<span class="text-muted"> (12,345$/Elevator) </span>
 									</label>
 									
 									<label class="radio">
-										<input type="radio" name="selection-btn" value="Excelium-btn">
+										<input type="radio" name="selection-btn" class="Excelium-btn">
 										<i></i> Excelium Package
 										<span class="text-muted"> (15,400$/Elevator) </span>
 									</label>
 								</div>
+								<br><br>
 								<div class="quote-result">
-									<h3>Total</h3>
-									<output id="result">
-									</output>
+									<h3>Total Value: <span id="result"></span>&dollar;</h3>
+									<a class="btn btn-primary" name="calculate-btn" id="calculate-btn">Calculate</a>
 								</div>
 							</form>
 						</div>
