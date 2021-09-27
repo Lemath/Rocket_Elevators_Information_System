@@ -318,7 +318,7 @@
 								<fieldset>
 
 									<label class="radio">
-										<input id="residential" type="radio" name="building-btn" value="residential-btn" checked="checked">Residential
+										<input id="residential" type="radio" name="building-btn" value="residential-btn" >Residential
 										<i></i>
 									</label>
 
@@ -338,12 +338,12 @@
 									</label>
 								</fieldset>
 
-								<section id="input-fields">
-									<div id="input-title" class="display">
+								<section id="input-fields" style="display: none;">
+									<div id="input-title" >
 										<h3>What your building contains</h3>
 									</div>
 
-									<div id="number-of-appartments" class="display">
+									<div id="number-of-appartments" class="residential" style="display: none;">
 										<label for="num-appt"> Number of Appartments
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-appt" min="0" max="10000" class="form-control" style="margin:0px;">
@@ -351,7 +351,7 @@
 										</label>
 									</div>
 
-									<div id="number-of-floors" class="display">
+									<div id="number-of-floors" class="residential commercial corporate hybrid" style="display: none;">
 										<label for="num-floors"> Number of Floors
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-floors" min="0" max="2000" class="form-control" style="margin: 0px;">
@@ -359,7 +359,7 @@
 										</label>
 									</div>
 
-									<div id="number-of-basements" class="display">
+									<div id="number-of-basements" class="residential commercial corporate hybrid" style="display: none;">
 										<label for="num-bsmt"> Number of Basements
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-bsmt" min="0" max="2000" class="form-control" style="margin: 0px;">
@@ -367,7 +367,7 @@
 										</label>
 									</div>
 
-									<div id="number-of-parking-spots" class="display">
+									<div id="number-of-parking-spots" class="commercial corporate hybrid" style="display: none;">
 										<label for="num-parking"> Number of Parking Spots
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-parking" min="0" max="20000" class="form-control" style="margin: 0px;">
@@ -375,7 +375,7 @@
 										</label>
 									</div>
 
-									<div id="number-of-business" class="display">
+									<div id="number-of-business" class="commercial hybrid" style="display: none;">
 										<label for="num-business"> Number of Distinct Businesses
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-business" min="0" max="250" class="form-control" style="margin: 0px;">
@@ -383,7 +383,7 @@
 										</label>
 									</div>
 
-									<div id="number-of-elevator-cage" class="display">
+									<div id="number-of-elevator-cage" class="commercial" style="display: none;">
 										<label for="num-cages"> Number of Elevator Cages Needed
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-cages" min="0" max="500" class="form-control" style="margin: 0px;">
@@ -391,7 +391,7 @@
 										</label>
 									</div>
 
-									<div id="number-of-corporation" class="display">
+									<div id="number-of-corporation" class="corporate" style="display: none;">
 										<label for="num-corp"> Number of Corporations
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-corp" min="0" max="250" class="form-control" style="margin: 0px;">
@@ -399,7 +399,7 @@
 										</label>
 									</div>
 
-									<div id="number-of-occupants" class="display">
+									<div id="number-of-occupants" class="corporate hybrid" style="display: none;">
 										<label for="num-occupants"> Maximum Occupants per Floor
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-occupants" min="0" max="5000" class="form-control" style="margin: 0px;">
@@ -407,7 +407,7 @@
 										</label>
 									</div>
 
-									<div id="Business-hours" class="display">
+									<div id="Business-hours" class="hybrid" style="display: none;">
 										<label for="num-hours"> How Many Hours of Activity per Day?
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
 												<input type="number" id="num-hours" min="0" max="24" class="form-control" style="margin: 0px;">
@@ -420,7 +420,7 @@
 									<h3>Which Package Are You Going For?</h3>
 
 									<label class="radio">
-										<input type="radio" name="selection-btn" value="standard-btn" checked="checked">
+										<input type="radio" name="selection-btn" value="standard-btn">
 										<i></i> Standard Package
 										<span class="text-muted"> (7565$/Elevator) </span>
 									</label>
@@ -436,6 +436,11 @@
 										<i></i> Excelium Package
 										<span class="text-muted"> (15,400$/Elevator) </span>
 									</label>
+								</div>
+								<div class="quote-result">
+									<h3>Total</h3>
+									<output id="result">
+									</output>
 								</div>
 							</form>
 						</div>
@@ -549,6 +554,7 @@
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 
 		<script src="assets/js/scripts.js"></script>
+		<script src="assets/js/FormScript.js"></script>
 
 		<!-- REVOLUTION SLIDER -->
 		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
