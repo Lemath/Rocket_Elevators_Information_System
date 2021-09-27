@@ -40,4 +40,18 @@ $(document).ready(function(){
     });
 });
 
+// Quote  Calculator Section
 
+$(document).ready(function(){
+    var result = 0;
+    let standard = 7565;
+    let premium = 12345;
+    let excelium = 15400;
+
+    $("#calculate-btn").click(function(){
+        var result =
+        ($("#num-appt").val()/$("#num-floors").val()/6)
+
+        $("#result").text(result)
+    })
+})
