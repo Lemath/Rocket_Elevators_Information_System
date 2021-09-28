@@ -34,7 +34,11 @@ $(document).ready(function(){
 
 // Quote  Calculator Section
 
+    var numelevators = 0;
     var totalelevators = 0;
+    var fees = 0;
+    var final =0;
+
     let standard = 7565;
     let premium = 12345;
     let excelium = 15400;
@@ -43,44 +47,42 @@ $(document).ready(function(){
 
     $("#quote").on("change",function(){
         if($("#residential").is(":checked")) {
-            var f = parseFloat($("#num-appt").val())
-            var g = parseFloat($("#num-floors").val())
+            var f = Math.ceil($("#num-appt").val())
+            var g = Math.ceil($("#num-floors").val())
             var h = (f/g)/6;
-            var numelevators = Math.ceil(h);
-            console.log(numelevators)}   
+            isNaN(numelevators = Math.ceil(h));{numelevators = 0};
+            console.log(numelevators)}
+            
 
         else if($("#commercial").is(":checked")){
-            var numelevators = parseFloat($("#num-cages").val())
+            numelevators = Math.ceil($("#num-cages").val())
             console.log(numelevators)}
 
-        else if($("#corporate").is(":checked")){
+        else if($(".corporate-hybrid").is(":checked")){
             var a = Math.ceil($("#num-floors").val())
             var b = Math.ceil($("#num-bsmt").val())
             var totalfloors = a + b;
             var c = Math.ceil($("#num-occupants").val())
             var d = 0;
-            var totaloccupants= totalfloors*c;
-            var numelevators = Math.ceil(totaloccupants/1000)
+            var totaloccupants = totalfloors*c;
+            numelevators = Math.ceil(totaloccupants/1000)
             console.log(numelevators)}
 
             if($("#standard-btn").is(":checked")){
                 totalelevators = numelevators*standard;
-                var fees = 0
-                var final = 0
+
                 fees = (totalelevators/100)*10
                 final = totalelevators+fees}
             
             else if($("#premium-btn").is(":checked")){
                 totalelevators = numelevators*premium;
-                var fees = 0
-                var final = 0
+
                 fees = (totalelevators/100)*10
                 final = totalelevators+fees}
 
             else if($("#excelium-btn").is(":checked")){
                 totalelevators = numelevators*excelium;
-                var fees = 0
-                var final = 0
+
                 fees = (totalelevators/100)*10
                 final = totalelevators+fees}         
 
