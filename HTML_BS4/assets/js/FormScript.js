@@ -50,7 +50,7 @@ $(document).ready(function(){
             var f = Math.ceil($("#num-appt").val())
             var g = Math.ceil($("#num-floors").val())
             var h = (f/g)/6;
-            isNaN(numelevators = Math.ceil(h));{numelevators = 0};
+            if(isNaN(numelevators = Math.ceil(h))){numelevators=0};
             console.log(numelevators)}
             
 
