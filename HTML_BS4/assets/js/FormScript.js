@@ -58,33 +58,37 @@ $(document).ready(function(){
 
         else if($("#commercial").is(":checked")){
             numelevators = Math.ceil($("#num-cages").val())
+            if(isNaN(totalelevators)){totalelevators=0};
             console.log(numelevators)}
 
         else if($(".corporate-hybrid").is(":checked")){
             var a = Math.ceil($("#num-floors").val())
             var b = Math.ceil($("#num-bsmt").val())
-            var totalfloors = a + b;
             var c = Math.ceil($("#num-occupants").val())
-            var d = 0;
+            var totalfloors = a + b;
             var totaloccupants = totalfloors*c;
-            numelevators = Math.ceil(totaloccupants/1000)
+            var elevatorsrequired = Math.ceil(totaloccupants/1000)
+            var numberofcolumns = Math.ceil(totalfloors/20)
+            var elevatorspercolumn = Math.ceil(elevatorsrequired/numberofcolumns)
+            numelevators = elevatorspercolumn*numberofcolumns
+            if(isNaN(numelevators)){numelevators=0};
+            if(isNaN(totalelevators)){totalelevators=0};
+            if(isNaN(fees)){fees=0};
+            if(isNaN(final)){final=0};
             console.log(numelevators)}
 
             if($("#standard-btn").is(":checked")){
                 totalelevators = numelevators*standard;
-
                 fees = (totalelevators/100)*10
                 final = totalelevators+fees}
             
             else if($("#premium-btn").is(":checked")){
                 totalelevators = numelevators*premium;
-
                 fees = (totalelevators/100)*10
                 final = totalelevators+fees}
 
             else if($("#excelium-btn").is(":checked")){
                 totalelevators = numelevators*excelium;
-
                 fees = (totalelevators/100)*10
                 final = totalelevators+fees}         
 
