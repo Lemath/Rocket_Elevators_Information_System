@@ -54,11 +54,12 @@ $(document).ready(function(){
         if($("#residential").is(":checked")) {
             totalelevators =($("#num-appt").val()/$("#num-floors").val()/6)}
 
-    //    else if($("#commercial").is(":checked")) {
-    //        result=()}
+        else if($("#commercial").is(":checked")) {
+            totalelevators =($("#num-cages").val())}
 
     //    else($("corporate").is(":checked")){
-    //        result=}
+    //        totalelevators =($("#num-occupants").val()/($("#num-floors").val()+$("#num-bsmt").val())
+    //        )}
         
 
 
