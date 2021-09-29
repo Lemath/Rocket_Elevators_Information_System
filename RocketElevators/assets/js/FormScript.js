@@ -6,6 +6,11 @@ $(document).ready(function(){
         $(".corporate").hide();
         $(".hybrid").hide();
         $(".residential").show();
+        $("#quote-form")[0].reset()
+        priceperunit = 0;
+        totalelevators = 0;
+        fees = 0;
+        final = 0;
     })
 
     $("#commercial").click(function(){
@@ -14,6 +19,11 @@ $(document).ready(function(){
         $(".corporate").hide();
         $(".hybrid").hide();
         $(".commercial").show();
+        $("#quote-form")[0].reset()
+        priceperunit = 0;
+        totalelevators = 0;
+        fees = 0;
+        final = 0;
     })
 
     $("#corporate").click(function(){
@@ -22,6 +32,11 @@ $(document).ready(function(){
         $(".commercial").hide();
         $(".hybrid").hide();
         $(".corporate").show();
+        $("#quote-form")[0].reset()
+        priceperunit = 0;
+        totalelevators = 0;
+        fees = 0;
+        final = 0;
     })
 
     $("#hybrid").click(function(){
@@ -29,7 +44,12 @@ $(document).ready(function(){
         $(".residential").hide();
         $(".commercial").hide();
         $(".corporate").hide();
-        $(".hybrid").show();
+        $(".hybrid").show();       
+        $("#quote-form")[0].reset()
+        priceperunit = 0;
+        totalelevators = 0;
+        fees = 0;
+        final = 0;
     });
 
 // Quote  Calculator Section
@@ -80,18 +100,21 @@ $(document).ready(function(){
             if($("#standard-btn").is(":checked")){
                 totalelevators = numelevators*standard;
                 fees = (totalelevators/100)*10
-                final = totalelevators+fees}
+                final = totalelevators+fees
+                priceperunit = 7565}
             
             else if($("#premium-btn").is(":checked")){
                 totalelevators = numelevators*premium;
                 fees = (totalelevators/100)*13
-                final = totalelevators+fees}
+                final = totalelevators+fees
+                priceperunit = 12345}
 
             else if($("#excelium-btn").is(":checked")){
                 totalelevators = numelevators*excelium;
                 fees = (totalelevators/100)*16
-                final = totalelevators+fees}         
+                final = totalelevators+fees
+                priceperunit = 15400}         
 
-        return $("#ele-num").text(Math.ceil(numelevators)),$("#ele-total").text(Math.ceil(totalelevators)),$("#total-fees").text(Math.ceil(fees)),$("#final-price").text(Math.ceil(final))})
+        return $("#ele-num").val(Math.ceil(numelevators)),$("#price-unit").val(priceperunit),$("#ele-total").val(Math.ceil(totalelevators)),$("#total-fees").val(Math.ceil(fees)),$("#finalprice").val(Math.ceil(final))})
     
     })
