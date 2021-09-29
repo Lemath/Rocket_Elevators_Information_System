@@ -221,11 +221,10 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-8">
 							<h3>Select your building type</h3>
-							<form id="quote-form" method="post" enctype="text-plain">
 								<fieldset>
 
 									<label class="radio">
-										<input id="residential" type="radio" name="building-btn" value="residential-btn" for="defaultChecked" >Residential
+										<input id="residential" type="radio" name="building-btn" value="residential-btn">Residential
 										<i></i>
 									</label>
 
@@ -244,6 +243,8 @@
 										<i></i>
 									</label>
 								</fieldset>
+
+							<form id="quote-form" method="post" enctype="text-plain">
 
 								<section id="input-fields" style="display: none;">
 									<div id="input-title" >
@@ -345,12 +346,45 @@
 									</label>
 								</div>
 								<br><br>
-								<div class="totals">
-									<h4>Amount of Elevators: <span id="ele-num"></span></h4>
-									<h4>Elevator Total: $ <span id="ele-total"></span></h4>
-									<h4>Installation fees: $ <span id="total-fees"></span></h4>
-									<h4>Final Price: $ <span id="final-price"></span></h4>
-								</div>
+
+								<div id="form-results">
+
+								    <div id="elevator-amount">
+									    <label> Total Amount of Elevators:
+										    <div style="margin: 0px 450px 0px 0px;">
+											    <input type="text" id="ele-num" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly>
+										    </div>
+									    </label>
+								    </div>
+								    <div id="elevator-unit-price">
+									    <label> Price per Elevator:
+										    <div style="margin: 0px 450px 0px 0px;">
+											    <input type="text" id="price-unit" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly>
+										    </div>
+									    </label>
+								    </div>
+								    <div id="elevator-total-price">
+									    <label> Total Price of Elevators:
+										    <div style="margin: 0px 450px 0px 0px;">
+											    <input type="text" id="ele-total" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly>
+										    </div>
+									    </label>
+								    </div>
+								    <div id="installation-fees">
+									    <label> Installation Fees:
+										    <div style="margin: 0px 450px 0px 0px;">
+											    <input type="text" id="total-fees" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly>
+										    </div>
+									    </label>
+								    </div>
+								    <div id="final-price">
+									    <label> Total Price:
+										    <div style="margin: 0px 450px 0px 0px;">
+											    <input type="text" id="finalprice" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly>
+										    </div>
+									    </label>
+								    </div>
+							    </div>
 							</form>
 						</div>
 					</div>
