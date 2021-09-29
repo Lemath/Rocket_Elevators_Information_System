@@ -84,12 +84,12 @@ $(document).ready(function(){
             
             else if($("#premium-btn").is(":checked")){
                 totalelevators = numelevators*premium;
-                fees = (totalelevators/100)*10
+                fees = (totalelevators/100)*13
                 final = totalelevators+fees}
 
             else if($("#excelium-btn").is(":checked")){
                 totalelevators = numelevators*excelium;
-                fees = (totalelevators/100)*10
+                fees = (totalelevators/100)*16
                 final = totalelevators+fees}         
 
         return $("#ele-num").text(Math.ceil(numelevators)),$("#ele-total").text(Math.ceil(totalelevators)),$("#total-fees").text(Math.ceil(fees)),$("#final-price").text(Math.ceil(final))})
