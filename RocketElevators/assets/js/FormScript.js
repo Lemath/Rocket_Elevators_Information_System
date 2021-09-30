@@ -57,7 +57,8 @@ $(document).ready(function(){
     var numelevators = 0;
     var totalelevators = 0;
     var fees = 0;
-    var final =0;
+    var final = 0;
+    var priceperunit = 0;
 
     let standard = 7565;
     let premium = 12345;
@@ -114,7 +115,8 @@ $(document).ready(function(){
                 fees = (totalelevators/100)*16
                 final = totalelevators+fees
                 priceperunit = 15400}         
+        
+        
 
-        return $("#ele-num").val(Math.ceil(numelevators)),$("#price-unit").val(priceperunit),$("#ele-total").val(Math.ceil(totalelevators)),$("#total-fees").val(Math.ceil(fees)),$("#finalprice").val(Math.ceil(final))})
-    
+    return $("#ele-num").val(numelevators.toLocaleString()),$("#price-unit").val(priceperunit.toLocaleString()),$("#ele-total").val(totalelevators.toLocaleString()),$("#total-fees").val(fees.toLocaleString()),$("#finalprice").val(final.toLocaleString())})   
     })
