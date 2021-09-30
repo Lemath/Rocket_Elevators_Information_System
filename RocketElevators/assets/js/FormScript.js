@@ -118,5 +118,5 @@ $(document).ready(function(){
         
         
 
-    return $("#ele-num").val(numelevators.toLocaleString()),$("#price-unit").val(priceperunit.toLocaleString()+"$"),$("#ele-total").val(totalelevators.toLocaleString()+"$"),$("#total-fees").val(fees.toLocaleString()+"$"),$("#finalprice").val(final.toLocaleString()+"$")})   
+    return $("#ele-num").val(numelevators.toLocaleString()),$("#price-unit").val(priceperunit.toLocaleString()+" $"),$("#ele-total").val(totalelevators.toLocaleString()+" $"),$("#total-fees").val(fees.toLocaleString()+" $"),$("#finalprice").val(final.toLocaleString()+" $")})   
     })
