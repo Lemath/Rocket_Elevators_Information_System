@@ -97,19 +97,19 @@ $(document).ready(function(){
             if(isNaN(final)){final=0};
             console.log(numelevators)}
 
-            if($("#standard-btn").is(":checked")){
+            if($("#standard").is(":checked")){
                 totalelevators = numelevators*standard;
                 fees = (totalelevators/100)*10
                 final = totalelevators+fees
                 priceperunit = 7565}
             
-            else if($("#premium-btn").is(":checked")){
+            else if($("#premium").is(":checked")){
                 totalelevators = numelevators*premium;
                 fees = (totalelevators/100)*13
                 final = totalelevators+fees
                 priceperunit = 12345}
 
-            else if($("#excelium-btn").is(":checked")){
+            else if($("#excelium").is(":checked")){
                 totalelevators = numelevators*excelium;
                 fees = (totalelevators/100)*16
                 final = totalelevators+fees
