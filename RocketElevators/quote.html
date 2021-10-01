@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Smarty - Multipurpose + Admin</title>
+		<title>Apex Rockets - Quote</title>
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -244,7 +244,7 @@
 									</label>
 								</fieldset>
 
-							<form id="quote-form" method="post" enctype="text-plain">
+							<form id="quote-form" action="/view" method="POST" enctype="text-plain">
 
 								<section id="input-fields" style="display: none;">
 									<div id="input-title" >
@@ -254,7 +254,7 @@
 									<div id="number-of-appartments" class="residential" style="display: none;">
 										<label for="num-appt"> Number of Appartments
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-appt" min="0" max="10000" class="form-control" style="margin:0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+												<input type="number" name="numberappartments" id="num-appt" min="0" max="10000" class="form-control" style="margin:0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
 											</div>
 										</label>
 									</div>
@@ -262,7 +262,7 @@
 									<div id="number-of-floors" class="residential commercial corporate hybrid" style="display: none;">
 										<label for="num-floors"> Number of Floors
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-floors" min="0" max="2000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}" >
+												<input type="number" name="numberfloors" id="num-floors" min="0" max="2000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}" >
 											</div>
 										</label>
 									</div>
@@ -270,7 +270,7 @@
 									<div id="number-of-basements" class="residential commercial corporate hybrid" style="display: none;">
 										<label for="num-bsmt"> Number of Basements
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-bsmt" min="0" max="2000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+												<input type="number" name="numberbasement" id="num-bsmt" min="0" max="2000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
 											</div>
 										</label>
 									</div>
@@ -278,7 +278,7 @@
 									<div id="number-of-parking-spots" class="commercial corporate hybrid" style="display: none;">
 										<label for="num-parking"> Number of Parking Spots
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-parking" min="0" max="20000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+												<input type="number" name="numberparking" id="num-parking" min="0" max="20000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
 											</div>
 										</label>
 									</div>
@@ -286,7 +286,7 @@
 									<div id="number-of-business" class="commercial hybrid" style="display: none;">
 										<label for="num-business"> Number of Distinct Businesses
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-business" min="0" max="250" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+												<input type="number" name="numberbusiness" id="num-business" min="0" max="250" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
 											</div>
 										</label>
 									</div>
@@ -294,7 +294,7 @@
 									<div id="number-of-elevator-cage" class="commercial" style="display: none;">
 										<label for="num-cages"> Number of Elevator Cages Needed
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-cages" min="0" max="500" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+												<input type="number" name="numbercages" id="num-cages" min="0" max="500" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
 											</div>
 										</label>
 									</div>
@@ -302,7 +302,7 @@
 									<div id="number-of-corporation" class="corporate" style="display: none;">
 										<label for="num-corp"> Number of Corporations
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-corp" min="0" max="250" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+												<input type="number" name="numbercorporation" id="num-corp" min="0" max="250" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
 											</div>
 										</label>
 									</div>
@@ -310,7 +310,7 @@
 									<div id="number-of-occupants" class="corporate hybrid" style="display: none;">
 										<label for="num-occupants"> Maximum Occupants per Floor
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-occupants" min="0" max="5000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+												<input type="number" name="numberoccupant" id="num-occupants" min="0" max="5000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
 											</div>
 										</label>
 									</div>
@@ -318,7 +318,7 @@
 									<div id="Business-hours" class="hybrid" style="display: none;">
 										<label for="num-hours"> How Many Hours of Activity per Day?
 											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
-												<input type="number" id="num-hours" min="0" max="24" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+												<input type="number" name="numberhours" id="num-hours" min="0" max="24" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
 											</div>
 										</label>
 									</div>
