@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $("#residential").click(function(){
         $("#input-fields").show();
