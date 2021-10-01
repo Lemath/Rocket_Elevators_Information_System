@@ -1,20 +1,24 @@
+const { application } = require('express')
 const express=require('express')
-const bodyparser=require('body-parser')
+const bodyParser = require('body-parser')
 const app=express()
+const port = 3000
 
-app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended: true}));
 
+//import {quote} from "./FormScript"
 
-app.get('',(req,res)=>{
-    res.sendfile(__dirname+"/index.hmtl")
-
+app.post('/view',(req,res)=>{
+	console.log(post.numberelevators,post.numberfloors,post.numberbasement,post.numberparking,post.numberbusiness,post.numbercages,post.numbercorporation,post.numberoccupant,post.numberhours)
+	
+    
 })
 
-app.post('/',(req,res)=>{
-    const n1=req.body.num1
+// app.post('/',(req,res)=>{
+//     const n1=req.body.num1
 
-    const n2=req.body.num2
-})
+//     const n2=req.body.num2
+// })
 
 
 
