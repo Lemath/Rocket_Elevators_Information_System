@@ -163,7 +163,13 @@
 
 	}
 
+/** Newsletter Subscribe Button */
 
+$(document).ready(function(){
+    $("#emailbutton").click(function(){
+        alert("Our Newsletter Service is presently under maintenance and should be back up soon, check back in a little bit!")
+    })
+})
 
 /** After Resize
  **************************************************************** **/
