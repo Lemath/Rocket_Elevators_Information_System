@@ -14,6 +14,7 @@ class EmployeesTest < ApplicationSystemTestCase
     visit employees_url
     click_on "New Employee"
 
+    fill_in "Email", with: @employee.email
     fill_in "First name", with: @employee.first_name
     fill_in "Id", with: @employee.id
     fill_in "Last name", with: @employee.last_name
@@ -28,6 +29,7 @@ class EmployeesTest < ApplicationSystemTestCase
     visit employees_url
     click_on "Edit", match: :first
 
+    fill_in "Email", with: @employee.email
     fill_in "First name", with: @employee.first_name
     fill_in "Id", with: @employee.id
     fill_in "Last name", with: @employee.last_name
