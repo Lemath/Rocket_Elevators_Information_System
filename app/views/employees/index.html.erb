@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
+<body class="smoothscroll enable-animation">
 
-<h1>Employees</h1>
 
-<table>
+<h1>Employees List</h1>
+<br/>
+<table class= "table table-primary table-striped">
   <thead>
     <tr>
       <th>Id</th>
@@ -22,14 +24,13 @@
         <td><%= employee.last_name %></td>
         <td><%= employee.email %></td>
         <td><%= employee.title %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', employee,class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee),class:"btn btn-primary" %></td>
+        <td><%= link_to 'Delete', employee,class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Employee', new_employee_path %>
+<%= link_to 'New Employee', new_employee_path, class:"btn btn-secondary" %>
