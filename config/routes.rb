@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'quote/index', to: 'quote#index'
+
+  #get 'back_office/index', to: 'back_office#index'
+  get 'home',  to: 'application#home'
 end
