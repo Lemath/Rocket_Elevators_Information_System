@@ -10,33 +10,29 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :id %>
-    <%= form.number_field :id %>
+<br/>
+  <div class="field form-group" style="width: 25%;">
+    <%= form.number_field :id ,class:"form-control col-6",placeholder:"User ID" %>
   </div>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+<br/>
+  <div class="field form-group"style="width: 25%;">
+    <%= form.text_field :first_name,class:"form-control col-6",placeholder:"First Name" %>
   </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+<br/>
+  <div class="field form-group"style="width: 25%;">
+    <%= form.text_field :last_name,class:"form-control col-6",placeholder:"Last Name" %>
   </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+<br/>
+  <div class="field form-group"style="width: 25%;">
+    <%= form.text_field :email,class:"form-control col-6",placeholder:"Email" %>
   </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+<br/>
+  <div class="field form-group"style="width: 25%;">
+    <%= form.text_field :title,class:"form-control col-6",placeholder:"Title" %>
   </div>
-
+<br/>
   <div class="actions">
     <%= form.submit %>
   </div>
+<br/>
 <% end %>
