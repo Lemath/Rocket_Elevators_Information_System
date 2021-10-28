@@ -18,4 +18,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 #  Rails.root.join('vendor/assets/javascripts/*').to_s,
 #  Rails.root.join('vendor/assets/stylesheets/*').to_s
 #]
-# Rails.application.config.assets.precompile += %w( admin.js admin.css )
+Rails.application.config.assets.precompile = ['manifest.js']
