@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'quote/index', to: 'quote#index'
+  root 'application#index'
+  get 'quote', to: 'application#quote'
+  get 'residential', to: 'application#residential'
+  get 'commercial', to: 'application#commercial'
 
   #get 'back_office/index', to: 'back_office#index'
-  get 'home',  to: 'application#home'
+  get 'index',  to: 'application#index'
 end
