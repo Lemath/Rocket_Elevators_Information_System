@@ -91,13 +91,15 @@
 		border-bottom:0;
 	}
 
-	#header li.search .search-box {
-		margin:0 !important;
-		position:fixed;
-		left:0; right:0;
-		top:60px !important;
-		width:100%;
-		background-color:#fff;
-		border-top:rgba(0,0,0,0.1) 1px solid;
-	}
+
+
+		#header li.search .search-box {
+			margin:0 !important;
+			position:fixed;
+			left:0; right:0;
+			top:60px !important;
+			width:100%;
+			background-color:#fff;
+			border-top:rgba(0,0,0,0.1) 1px solid;
+		}
 }
