@@ -1,7 +1,5 @@
 /**	CONTACT FORM
-<<<<<<< HEAD
 *************************************************** **/
-
 var _hash = window.location.hash;
 
 /**
