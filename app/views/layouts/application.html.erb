@@ -19,19 +19,19 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 
 		<!-- CORE CSS -->
-		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<%= stylesheet_link_tag 'bootstrap.min', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 		<!-- REVOLUTION SLIDER -->
-		<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
-		<link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+		<%= stylesheet_link_tag 'extralayers', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag 'settings', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 		<!-- THEME CSS -->
-		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+		<%= stylesheet_link_tag 'essentials', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag 'layout', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 		<!-- PAGE LEVEL SCRIPTS -->
-		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<%= stylesheet_link_tag 'header-1', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag 'blue', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 		<link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
@@ -107,25 +107,29 @@
 
 
 		<!-- JAVASCRIPT FILES -->
-		<script>var plugin_path = 'assets/plugins/';</script>
-		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+		<script>var plugin_path = 'assets/javascripts/';</script>
+		<%= javascript_include_tag 'jquery-3.3.1.min', 'data-turbolinks-track': 'reload' %>
 
-		<script src="assets/js/scripts.js"></script>
+		<%= javascript_include_tag 'FormScript', 'data-turbolinks-track': 'reload' %>
+
+		<%= javascript_include_tag 'scripts', 'data-turbolinks-track': 'reload' %>
 
 		<!-- REVOLUTION SLIDER -->
-		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
-		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-		<script src="assets/js/view/demo.revolution_slider.js"></script>
+		<%= javascript_include_tag 'jquery.themepunch.tools.min', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'jquery.themepunch.revolution.min', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'demo.revolution_slider', 'data-turbolinks-track': 'reload' %>
+		
 
 		<!-- PAGELEVEL SCRIPTS -->
-		<script src="assets/js/contact.js"></script>
+		<%= javascript_include_tag 'contact', 'data-turbolinks-track': 'reload' %>
+		
 
 		<!-- 
 			GMAP.JS 
 			http://hpneo.github.io/gmaps/
 		-->
 		<script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
-		<script src="assets/plugins/gmaps.js"></script>
+		<%= javascript_include_tag 'gmaps', 'data-turbolinks-track': 'reload' %>
 		<script>
 
 			jQuery(document).ready(function(){
@@ -149,5 +153,6 @@
 			});
 
 		</script>
+
 	</body>
 </html>
