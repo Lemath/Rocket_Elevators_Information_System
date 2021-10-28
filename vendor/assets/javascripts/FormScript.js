@@ -73,13 +73,15 @@ $(document).ready(function(){
             var numberofcolumns = Math.ceil(g/20)
             var i = elevatorspercolumn*numberofcolumns
             if(isNaN(numelevators = i)){numelevators=0};
-            console.log(numelevators)}
+            console.log(numelevators)
+        }
             
 
         else if($("#commercial").is(":checked")){
             numelevators = Math.ceil($("#num-cages").val())
             if(isNaN(totalelevators)){totalelevators=0};
-            console.log(numelevators)}
+            console.log(numelevators)
+        }
 
         else if($(".corporate-hybrid").is(":checked")){
             var a = Math.ceil($("#num-floors").val())
@@ -95,27 +97,31 @@ $(document).ready(function(){
             if(isNaN(totalelevators)){totalelevators=0};
             if(isNaN(fees)){fees=0};
             if(isNaN(final)){final=0};
-            console.log(numelevators)}
+            console.log(numelevators)
+        }
 
             if($("#standard").is(":checked")){
                 totalelevators = numelevators*standard;
                 fees = (totalelevators/100)*10
                 final = totalelevators+fees
-                priceperunit = 7565}
+                priceperunit = 7565
+            }
             
             else if($("#premium").is(":checked")){
                 totalelevators = numelevators*premium;
                 fees = (totalelevators/100)*13
                 final = totalelevators+fees
-                priceperunit = 12345}
+                priceperunit = 12345
+            }
 
             else if($("#excelium").is(":checked")){
                 totalelevators = numelevators*excelium;
                 fees = (totalelevators/100)*16
                 final = totalelevators+fees
-                priceperunit = 15400}         
+                priceperunit = 15400
+            }         
         
         
 
     return $("#ele-num").val(numelevators.toLocaleString()),$("#price-unit").val(priceperunit.toLocaleString()+" $"),$("#ele-total").val(totalelevators.toLocaleString()+" $"),$("#total-fees").val(fees.toLocaleString()+" $"),$("#finalprice").val(final.toLocaleString()+" $")})   
-    })
+})

@@ -1384,7 +1384,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e33a0c', end
 }
 
 .fullrounded img {
-   -webkit-border-radius: 400px;
+-webkit-border-radius: 400px;
 -moz-border-radius: 400px;
 border-radius: 400px; 
-  }
+}
