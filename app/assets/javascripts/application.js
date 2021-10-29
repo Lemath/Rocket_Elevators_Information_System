@@ -24,6 +24,8 @@
 //= require activestorage
 //= require scripts
 
+
+
 //= require owl.carousel
 //= require bootstrap-sprockets
 //= require smoothscroll

@@ -19,7 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'devise', '~> 4.8'
 
-gem 'jquery-turbolinks', '~> 2.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
