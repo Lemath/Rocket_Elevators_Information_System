@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_005457) do
+ActiveRecord::Schema.define(version: 2021_10_29_172618) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "Userid"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 2021_10_29_005457) do
     t.string "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "residential"
+    t.boolean "commercial"
+    t.boolean "corporate"
+    t.boolean "hybrid"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|

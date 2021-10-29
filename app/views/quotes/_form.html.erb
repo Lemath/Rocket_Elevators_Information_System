@@ -38,8 +38,11 @@
 								<fieldset>
 
 									<label class="radio">
-										<input id="residential" type="radio" name="building-btn" value="residential-btn">Residential
-										<i></i>
+										<div>
+											<input id="residential" type="radio" name="building-btn" value="residential-btn">Residential
+											<%= form.hidden_field :residential %>
+											<i></i>
+										</div>
 									</label>
 
 									<label class="radio">
