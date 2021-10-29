@@ -185,7 +185,7 @@
 								    <div id="elevator-total-price" class="col-md-4">
 									    <label> Total Price of Elevators:
 										    <div style="margin: 0px 0px 0px 0px;">
-											    <input type="text" id="ele-total" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price_of_elevator %>
+											    <input type="text" id="ele-total" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price_of_elevator %> 
 
 										    </div>
 									    </label>
@@ -203,12 +203,10 @@
 											    <input type="text" id="finalprice" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price %>
                           
 										    </div>
-											    <input type="button" onclick="radioText()" value= "texte" >
-												
-												<input type="text" label= "results" id="results" size="20"  <%= form.hidden_field :building_type %></input>
+												<input type="text" label= "results" id="results" size="20" hidden  <%= form.hidden_field :building_type %></input>
 									    </label>
                         <div class="actions">
-                        <%= form.submit class:"btn btn-primary" %>
+                        <%= form.submit class:"btn btn-primary", :onclick=>"radioText()" %>
                         </div>
 								    </div>
                     
