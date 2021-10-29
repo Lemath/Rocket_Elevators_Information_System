@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quotes
   get 'quote/index', to: 'quote#index'
 
   devise_for :users
