@@ -6,10 +6,13 @@
 		<%= csrf_meta_tags %>
     	<%= csp_meta_tag %>
 
-    	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    	
+    	
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -66,7 +69,7 @@
 		BACKGROUND IMAGE [together with .boxed class]
 		data-background="assets/images/_smarty/boxed_background/1.jpg"
 	-->
-	<body class="enable-animation">
+	<body class="smoothscroll enable-animation">
 
 
 		
@@ -107,23 +110,23 @@
 
 
 		<!-- JAVASCRIPT FILES -->
+		<script>var plugin_path = 'assets/plugins/';</script>
+		<%= javascript_include_tag 'jquery-3.3.1.min' %>
+
 		
-		<%= javascript_include_tag 'jquery-3.3.1.min', 'data-turbolinks-track': 'reload' %>
-
-		<%= javascript_include_tag 'FormScript', 'data-turbolinks-track': 'reload' %>
-
-		<%= javascript_include_tag 'scripts', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'bootstrap.min', 'data-turbolinks-track': 'reload'%>>
+		
+		<%= javascript_include_tag 'scripts' %>
+		
 
 		<!-- REVOLUTION SLIDER -->
-		<%= javascript_include_tag 'jquery.themepunch.tools.min', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'jquery.themepunch.revolution.min', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'demo.revolution_slider', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'jquery.themepunch.tools.min' %>
+		<%= javascript_include_tag 'jquery.themepunch.revolution.min' %>
+		<%= javascript_include_tag 'demo.revolution_slider' %>
 		
 
 		<!-- PAGELEVEL SCRIPTS -->
 		<%= javascript_include_tag 'contact', 'data-turbolinks-track': 'reload' %>
-		
+		<%= javascript_include_tag 'FormScript', 'data-turbolinks-track': 'reload' %>
 
 		<!-- 
 			GMAP.JS 
