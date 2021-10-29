@@ -119,3 +119,18 @@ $(document).ready(function(){
 
     return $("#ele-num").val(numelevators.toLocaleString()),$("#price-unit").val(priceperunit.toLocaleString()+" $"),$("#ele-total").val(totalelevators.toLocaleString()+" $"),$("#total-fees").val(fees.toLocaleString()+" $"),$("#finalprice").val(final.toLocaleString()+" $")})   
     })
+
+
+    // radio btn value 
+    function radioText(){
+        let building_btn = document.forms[0];
+        let txt = "";
+        let i;
+        for (i=0; i< building_btn.length; i++){
+            if (building_btn[i].checked) {
+                txt = txt + building_btn[i].value + "";
+            }
+        }
+        document.getElementById("results").value = txt;
+    }
+

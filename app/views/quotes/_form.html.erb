@@ -35,31 +35,30 @@
 					<div class="row" id="building-type">
 						<div class="col-md-8 col-sm-8">
 							<h3>Select your building type</h3>
-								<fieldset>
+								<form>
 
 									<label class="radio">
 										<div>
-											<input id="residential" type="radio" name="building-btn" value="residential-btn">Residential
-											<%= form.hidden_field :residential %>
+											<input id="residential" type="radio" name="building_btn" value="residential">Residential
 											<i></i>
 										</div>
 									</label>
 
 									<label class="radio">
-										<input id="commercial" type="radio" name="building-btn" value="commercial-btn">Commercial
+										<input id="commercial" type="radio" name="building_btn" value="commercial">Commercial
 										<i></i>
 									</label>
 
 									<label class="radio">
-										<input id="corporate" type="radio" name="building-btn" value="corporate-btn" class="corporate-hybrid">Corporate
+										<input id="corporate" type="radio" name="building_btn" value="corporate" class="corporate-hybrid">Corporate
 										<i></i>
 									</label>
 
 									<label class="radio">
-										<input id="hybrid" type="radio" name="building-btn" value="hybrid-btn" class="corporate-hybrid">Hybrid
+										<input id="hybrid" type="radio" name="building_btn" value="hybrid" class="corporate-hybrid">Hybrid
 										<i></i>
 									</label>
-								</fieldset>
+								</form>
 
 							<form id="quote-form" action="/view" method="POST" enctype="text-plain">
 
@@ -204,6 +203,9 @@
 											    <input type="text" id="finalprice" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price %>
                           
 										    </div>
+											    <input type="button" onclick="radioText()" value= "texte" >
+												
+												<input type="text" label= "results" id="results" size="20"  <%= form.hidden_field :building_type %></input>
 									    </label>
                         <div class="actions">
                         <%= form.submit class:"btn btn-primary" %>
