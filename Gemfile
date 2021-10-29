@@ -18,7 +18,9 @@ gem 'uglifier', '>= 1.3.0'
 
 
 gem 'devise', '~> 4.8'
-
+gem 'jquery-rails', '~> 4.4'
+gem 'mixitup_rails', '~> 0.0.3'
+gem 'owlcarousel-rails'
 gem 'jquery-turbolinks', '~> 2.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

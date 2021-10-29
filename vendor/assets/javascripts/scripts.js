@@ -40,7 +40,7 @@
 *************************************************** **/
 	window.width 	= jQuery(window).width();
 	window.height 	= jQuery(window).height();
-
+	plugin_path = 'assets/javascripts/'
 
 	/* Init */
 	jQuery(window).ready(function () {
@@ -57,7 +57,7 @@
 		_loadPopperBS4();
 
 		// Load Bootstrap JS
-		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
+		loadScript(plugin_path + 'bootstrap.min.js', function() {
 
 			// Load Material Design Js
 			if(jQuery("body").hasClass('enable-materialdesign')) {

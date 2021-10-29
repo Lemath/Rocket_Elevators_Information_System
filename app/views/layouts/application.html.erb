@@ -66,10 +66,10 @@
 		BACKGROUND IMAGE [together with .boxed class]
 		data-background="assets/images/_smarty/boxed_background/1.jpg"
 	-->
-	<body class="smoothscroll enable-animation">
+	<body class="enable-animation">
 
 
-		<%= render partial: 'layouts/slidetop' %>
+		
 		
 
 
@@ -107,12 +107,13 @@
 
 
 		<!-- JAVASCRIPT FILES -->
-		<script>var plugin_path = 'assets/javascripts/';</script>
+		
 		<%= javascript_include_tag 'jquery-3.3.1.min', 'data-turbolinks-track': 'reload' %>
 
 		<%= javascript_include_tag 'FormScript', 'data-turbolinks-track': 'reload' %>
 
 		<%= javascript_include_tag 'scripts', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'bootstrap.min', 'data-turbolinks-track': 'reload'%>>
 
 		<!-- REVOLUTION SLIDER -->
 		<%= javascript_include_tag 'jquery.themepunch.tools.min', 'data-turbolinks-track': 'reload' %>
