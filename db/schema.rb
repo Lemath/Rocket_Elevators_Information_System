@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_201311) do
+ActiveRecord::Schema.define(version: 2021_10_29_172618) do
 
-  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "Userid"
     t.string "first_name"
     t.string "last_name"
@@ -22,7 +22,21 @@ ActiveRecord::Schema.define(version: 2021_10_26_201311) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "amount_of_elevator"
+    t.string "price_per_elevator"
+    t.string "total_price_of_elevator"
+    t.string "installation"
+    t.string "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "residential"
+    t.boolean "commercial"
+    t.boolean "corporate"
+    t.boolean "hybrid"
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

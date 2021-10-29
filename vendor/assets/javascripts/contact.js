@@ -1,9 +1,7 @@
 /**	CONTACT FORM
-<<<<<<< HEAD:public/assets/js/contact.js
+<<<<<<< HEAD
 *************************************************** **/
-=======
-***************************************************fffdd **/
->>>>>>> 2b1a81a8b0bf928d7fcad5877559d4e0d3407914:vendor/assets/javascripts/contact.js
+
 var _hash = window.location.hash;
 
 /**

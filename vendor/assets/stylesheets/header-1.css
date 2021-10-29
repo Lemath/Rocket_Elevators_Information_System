@@ -100,9 +100,9 @@
 			background-color:#fff;
 			border-top:rgba(0,0,0,0.1) 1px solid;
 		}
-<<<<<<< HEAD:public/assets/css/header-1.css
 }
-=======
+
+
 #topMain>li>a {
 	height:96px;
 	line-height:96px;
@@ -205,5 +205,4 @@
 		background-color:#fff;
 		border-top:rgba(0,0,0,0.1) 1px solid;
 	}
-}}
->>>>>>> 2b1a81a8b0bf928d7fcad5877559d4e0d3407914:vendor/assets/stylesheets/header-1.css
+}
