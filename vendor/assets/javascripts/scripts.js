@@ -40,7 +40,7 @@
 *************************************************** **/
 	window.width 	= jQuery(window).width();
 	window.height 	= jQuery(window).height();
-
+	
 
 	/* Init */
 	jQuery(window).ready(function () {
@@ -57,7 +57,7 @@
 		_loadPopperBS4();
 
 		// Load Bootstrap JS
-		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
+		loadScript(plugin_path + 'bootstrap.min.js', function() {
 
 			// Load Material Design Js
 			if(jQuery("body").hasClass('enable-materialdesign')) {
@@ -1244,7 +1244,7 @@ $(document).ready(function(){
 
 		if(_container.length > 0) {
 
-			loadScript(plugin_path + 'owl-carousel/owl.carousel.min.js', function() {
+			loadScript(plugin_path + 'owl.carousel.min.js', function() {
 
 				_container.each(function() {
 
@@ -1562,7 +1562,7 @@ $(document).ready(function(){
 
 		if(_el.length > 0) {
 
-			loadScript(plugin_path + 'magnific-popup/jquery.magnific-popup.min.js', function() {
+			loadScript(plugin_path + 'jquery.magnific-popup.min.js', function() {
 
 				if(typeof(jQuery.magnificPopup) == "undefined") {
 					return false;
@@ -1802,7 +1802,7 @@ $(document).ready(function(){
 		var _container = jQuery('.mix-grid');
 		
 		if(_container.length > 0) {
-			loadScript(plugin_path + 'mixitup/jquery.mixitup.min.js', function() {
+			loadScript(plugin_path + 'jquery.mixitup.min.js', function() {
 
 				if(jQuery().mixitup) {
 

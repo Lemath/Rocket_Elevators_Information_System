@@ -39,6 +39,18 @@ gem 'rails_admin'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+
+gem 'bootstrap', '~> 5.1'
+gem 'jquery-rails', '~> 4.4'
+gem 'mixitup_rails', '~> 0.0.3'
+gem 'owlcarousel-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
+gem 'popper_js', '~> 2.9', '>= 2.9.3'
+gem 'magnific-popup-rails', '~> 1.1'
+gem 'jquery-turbolinks', '~> 2.1'
+
+
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 
