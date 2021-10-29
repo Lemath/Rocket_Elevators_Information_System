@@ -19,7 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'devise', '~> 4.8'
 
-gem 'jquery-turbolinks', '~> 2.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -31,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
+gem 'rails_admin'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -38,13 +38,29 @@ gem 'pry'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+
+gem 'bootstrap', '~> 5.1'
+gem 'jquery-rails', '~> 4.4'
+gem 'mixitup_rails', '~> 0.0.3'
+gem 'owlcarousel-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
+gem 'popper_js', '~> 2.9', '>= 2.9.3'
+gem 'magnific-popup-rails', '~> 1.1'
+gem 'jquery-turbolinks', '~> 2.1'
+
+
+
 gem 'bootsnap', '>= 1.1.0', require: false
+
+
+gem 'ed25519', '~> 1.2', '>= 1.2.4'
+gem 'bcrypt_pbkdf', '~> 1.0.0.alpha1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
-  gem 'capistrano', '~> 3.10', require: false     #these 5 are for the deployment. ST
+  gem 'capistrano', '~> 3.11.0', require: false     #these 5 are for the deployment. ST
   gem 'capistrano-rails', '~> 1.4', require: false
   gem 'capistrano-bundler', '>= 1.1.0'
   gem 'rvm1-capistrano3', require: false

@@ -1,0 +1,223 @@
+<%= form_with(model: quote, local: true) do |form| %>
+  <% if quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% quote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+			<hr class="m-0" /><!-- 1px line separator -->
+
+
+			<!-- BUTTON CALLOUT -->
+			<a href="#" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
+				<span class="font-lato fs-30">
+					One Step closer to Rocket Speed!
+				</span>
+			</a>
+			<!-- /BUTTON CALLOUT -->
+
+
+			
+			<!-- Quote -->
+			<section id="quote">
+				<div class="container">
+					<header class="text-center">
+						<h2>Request A Form</h2>
+						<hr>
+					</header>
+					<div class="row" id="building-type">
+						<div class="col-md-8 col-sm-8">
+							<h3>Select your building type</h3>
+								<fieldset>
+
+									<label class="radio">
+										<div>
+											<input id="residential" type="radio" name="building-btn" value="residential-btn">Residential
+											<%= form.hidden_field :residential %>
+											<i></i>
+										</div>
+									</label>
+
+									<label class="radio">
+										<input id="commercial" type="radio" name="building-btn" value="commercial-btn">Commercial
+										<i></i>
+									</label>
+
+									<label class="radio">
+										<input id="corporate" type="radio" name="building-btn" value="corporate-btn" class="corporate-hybrid">Corporate
+										<i></i>
+									</label>
+
+									<label class="radio">
+										<input id="hybrid" type="radio" name="building-btn" value="hybrid-btn" class="corporate-hybrid">Hybrid
+										<i></i>
+									</label>
+								</fieldset>
+
+							<form id="quote-form" action="/view" method="POST" enctype="text-plain">
+
+								<section id="input-fields" style="display: none;" class="pt-4">
+									<div id="input-title" >
+										<h3>What your building contains</h3>
+									</div>
+
+									<div id="number-of-appartments" class="residential" style="display: none;">
+										<label for="num-appt"> Number of Appartments
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numberappartments" id="num-appt" min="0" max="10000" class="form-control" style="margin:0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+											</div>
+										</label>
+									</div>
+
+									<div id="number-of-floors" class="residential commercial corporate hybrid" style="display: none;">
+										<label for="num-floors"> Number of Floors
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numberfloors" id="num-floors" min="0" max="2000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}" >
+											</div>
+										</label>
+									</div>
+
+									<div id="number-of-basements" class="residential commercial corporate hybrid" style="display: none;">
+										<label for="num-bsmt"> Number of Basements
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numberbasement" id="num-bsmt" min="0" max="2000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+											</div>
+										</label>
+									</div>
+
+									<div id="number-of-parking-spots" class="commercial corporate hybrid" style="display: none;">
+										<label for="num-parking"> Number of Parking Spots
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numberparking" id="num-parking" min="0" max="20000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+											</div>
+										</label>
+									</div>
+
+									<div id="number-of-business" class="commercial hybrid" style="display: none;">
+										<label for="num-business"> Number of Distinct Businesses
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numberbusiness" id="num-business" min="0" max="250" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+											</div>
+										</label>
+									</div>
+
+									<div id="number-of-elevator-cage" class="commercial" style="display: none;">
+										<label for="num-cages"> Number of Elevator Cages Needed
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numbercages" id="num-cages" min="0" max="500" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+											</div>
+										</label>
+									</div>
+
+									<div id="number-of-corporation" class="corporate" style="display: none;">
+										<label for="num-corp"> Number of Corporations
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numbercorporation" id="num-corp" min="0" max="250" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+											</div>
+										</label>
+									</div>
+
+									<div id="number-of-occupants" class="corporate hybrid" style="display: none;">
+										<label for="num-occupants"> Maximum Occupants per Floor
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numberoccupant" id="num-occupants" min="0" max="5000" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+											</div>
+										</label>
+									</div>
+
+									<div id="Business-hours" class="hybrid" style="display: none;">
+										<label for="num-hours"> How Many Hours of Activity per Day?
+											<div class="stepper-wrap" style="margin: 0px 45px 0px 0px;">
+												<input type="number" name="numberhours" id="num-hours" min="0" max="24" class="form-control" style="margin: 0px;" onkeyup="if(this.value<0){this.value= this.value * -1}">
+											</div>
+										</label>
+									</div>
+								</section>
+								
+								<div id="package-selection-button" class="col-md-8 col-sm-8" class="display">
+									<h4>Which Package Are You Going For?</h4>
+
+									<label class="radio">
+										<input type="radio" name="selection-btn" class="standard-btn" id="standard" >
+										<i></i>Standard Package
+										<span class="text-muted" style="font-size: 75%"> (7565$/Elevator) </span>
+									</label>
+									
+									<label class="radio">
+										<input type="radio" name="selection-btn" class="premium-btn" id="premium">
+										<i></i> Premium Package
+										<span class="text-muted" style="font-size: 75%"> (12,345$/Elevator) </span>
+									</label>
+									
+									<label class="radio">
+										<input type="radio" name="selection-btn" class="excelium-btn" id="excelium">
+										<i></i> Excelium Package
+										<span class="text-muted" style="font-size: 75%"> (15,400$/Elevator) </span>
+									</label>
+								</div>
+								<br><br>
+
+								<div class="row" id="form-results">
+
+								    <div id="elevator-amount" class="col-md-4">
+									    <label> Total Amount of Elevators:
+										    <div style="margin: 0px 0px 0px 0px;">
+											    <input type="text" id="ele-num" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;"  readonly <%= form.hidden_field :amount_of_elevator %>
+
+										    </div>
+									    </label>
+								    </div>
+								    <div id="elevator-unit-price" class="col-md-4">
+									    <label> Price per Elevator:
+										    <div style="margin: 0px 0px 0px 0px;">
+											    <input type="text" id="price-unit" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :price_per_elevator %>
+
+
+										    </div>
+									    </label>
+								    </div>
+								    <div id="elevator-total-price" class="col-md-4">
+									    <label> Total Price of Elevators:
+										    <div style="margin: 0px 0px 0px 0px;">
+											    <input type="text" id="ele-total" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price_of_elevator %>
+
+										    </div>
+									    </label>
+								    </div>
+								    <div id="installation-fees" class="col-md-12">
+									    <label> Installation Fees:
+										    <div style="margin: 0px 520px 0px 0px;">
+											    <input type="text" id="total-fees" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :installation %>
+										    </div>
+									    </label>
+								    </div>
+								    <div id="final-price" class="col-md-12">
+									    <label> Total Price:
+										    <div style="margin: 0px 520px 0px 0px;">
+											    <input type="text" id="finalprice" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price %>
+                          
+										    </div>
+									    </label>
+                        <div class="actions">
+                        <%= form.submit class:"btn btn-primary" %>
+                        </div>
+								    </div>
+                    
+							    </div>
+							</form>
+						</div>
+					</div>
+ 
+
+
+				</div>
+			</section>
+
+<% end %>
