@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    
+
     def index 
         
     end
@@ -14,3 +14,4 @@ class ApplicationController < ActionController::Base
     def commercial
     end
 end
+protect_from_forgery
