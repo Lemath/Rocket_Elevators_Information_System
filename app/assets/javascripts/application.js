@@ -29,4 +29,4 @@
 //= require owl.carousel
 //= require bootstrap-sprockets
 //= require smoothscroll
-//= require_tree .
+
