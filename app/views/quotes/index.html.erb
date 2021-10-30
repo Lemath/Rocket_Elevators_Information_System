@@ -5,10 +5,7 @@
 <table class= "container table table-primary table-striped ">
   <thead>
     <tr>
-      <th>Residential</th>
-      <th>Commercial</th>
-      <th>Corporate</th>
-      <th>Hybrid</th>
+      <th>Building Type</th>
       <th>Amount of elevator</th>
       <th>Price per elevator</th>
       <th>Total price of elevator</th>
@@ -21,10 +18,7 @@
   <tbody>
     <% @quotes.each do |quote| %>
       <tr>
-        <td><%= quote.residential %></td>
-        <td><%= quote.commercial %></td>
-        <td><%= quote.corporate %></td>
-        <td><%= quote.hybrid %></td>
+        <td><%= quote.building_type %></td>
         <td><%= quote.amount_of_elevator %></td>
         <td><%= quote.price_per_elevator %></td>
         <td><%= quote.total_price_of_elevator %></td>
@@ -39,5 +33,6 @@
 </table>
 
 <br>
-
+<div class="text-center">
 <%= link_to 'New Quote', new_quote_path ,class:"text-center btn btn-secondary"%>
+</div>
