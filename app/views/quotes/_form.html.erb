@@ -39,24 +39,23 @@
 
 									<label class="radio">
 										<div>
-											<input id="residential" type="radio" name="building-btn" value="residential-btn">Residential
-											<%= form.hidden_field :residential %>
+											<input id="residential" type="radio" name="building_btn" value="residential">Residential
 											<i></i>
 										</div>
 									</label>
 
 									<label class="radio">
-										<input id="commercial" type="radio" name="building-btn" value="commercial-btn">Commercial
+										<input id="commercial" type="radio" name="building_btn" value="commercial">Commercial
 										<i></i>
 									</label>
 
 									<label class="radio">
-										<input id="corporate" type="radio" name="building-btn" value="corporate-btn" class="corporate-hybrid">Corporate
+										<input id="corporate" type="radio" name="building_btn" value="corporate" class="corporate-hybrid">Corporate
 										<i></i>
 									</label>
 
 									<label class="radio">
-										<input id="hybrid" type="radio" name="building-btn" value="hybrid-btn" class="corporate-hybrid">Hybrid
+										<input id="hybrid" type="radio" name="building_btn" value="hybrid" class="corporate-hybrid">Hybrid
 										<i></i>
 									</label>
 								</fieldset>
@@ -145,19 +144,19 @@
 									<h4>Which Package Are You Going For?</h4>
 
 									<label class="radio">
-										<input type="radio" name="selection-btn" class="standard-btn" id="standard" >
+										<input type="radio" name="selection-btn" value="" id="standard" >
 										<i></i>Standard Package
 										<span class="text-muted" style="font-size: 75%"> (7565$/Elevator) </span>
 									</label>
 									
 									<label class="radio">
-										<input type="radio" name="selection-btn" class="premium-btn" id="premium">
+										<input type="radio" name="selection-btn" value="" id="premium">
 										<i></i> Premium Package
 										<span class="text-muted" style="font-size: 75%"> (12,345$/Elevator) </span>
 									</label>
 									
 									<label class="radio">
-										<input type="radio" name="selection-btn" class="excelium-btn" id="excelium">
+										<input type="radio" name="selection-btn" value="" id="excelium">
 										<i></i> Excelium Package
 										<span class="text-muted" style="font-size: 75%"> (15,400$/Elevator) </span>
 									</label>
@@ -186,7 +185,7 @@
 								    <div id="elevator-total-price" class="col-md-4">
 									    <label> Total Price of Elevators:
 										    <div style="margin: 0px 0px 0px 0px;">
-											    <input type="text" id="ele-total" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price_of_elevator %>
+											    <input type="text" id="ele-total" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price_of_elevator %> 
 
 										    </div>
 									    </label>
@@ -202,11 +201,13 @@
 									    <label> Total Price:
 										    <div style="margin: 0px 520px 0px 0px;">
 											    <input type="text" id="finalprice" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price %>
-                          
-										    </div>
-									    </label>
+												
+												<input type="text" label= "results" id="results" size="20" hidden <%= form.hidden_field :building_type %> 												
+											</div>								    
+										</label>
+									</div>
                         <div class="actions">
-                        <%= form.submit class:"btn btn-primary" %>
+                        <%= form.submit class:"btn btn-primary", :onclick => "radioText()" %>
                         </div>
 								    </div>
                     

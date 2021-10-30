@@ -1,4 +1,3 @@
-/**	CONTACT FORM
 
 var _hash = window.location.hash;
 
