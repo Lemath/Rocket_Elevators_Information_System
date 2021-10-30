@@ -35,7 +35,8 @@
 					<div class="row" id="building-type">
 						<div class="col-md-8 col-sm-8">
 							<h3>Select your building type</h3>
-								<form>
+
+								<fieldset>
 
 									<label class="radio">
 										<div>
@@ -58,7 +59,7 @@
 										<input id="hybrid" type="radio" name="building_btn" value="hybrid" class="corporate-hybrid">Hybrid
 										<i></i>
 									</label>
-								</form>
+								</fieldset>
 
 							<form id="quote-form" action="/view" method="POST" enctype="text-plain">
 
@@ -201,10 +202,10 @@
 									    <label> Total Price:
 										    <div style="margin: 0px 520px 0px 0px;">
 											    <input type="text" id="finalprice" min="0" max="" class="form-control" placeholder="0" style="margin: 0px;" readonly <%= form.hidden_field :total_price %>
-                          
-										    </div>
-												<input type="text" label= "results" id="results" size="20" hidden  <%= form.hidden_field :building_type %></input>
-									    </label>
+												<input type="text" label= "results" id="results" size="20"  <%= form.hidden_field :building_type %>
+											</div>								    
+										</label>
+									</div>
                         <div class="actions">
                         <%= form.submit class:"btn btn-primary", :onclick=>"radioText()" %>
                         </div>

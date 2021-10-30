@@ -128,7 +128,7 @@ $(document).ready(function(){
         let i;
         for (i=0; i< building_btn.length; i++){
             if (building_btn[i].checked) {
-                txt = txt + building_btn[i].value + "";
+                txt = txt + building_btn[i].value +"";
             }
         }
         document.getElementById("results").value = txt;
