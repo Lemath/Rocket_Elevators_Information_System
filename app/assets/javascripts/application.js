@@ -23,7 +23,8 @@
 
 //= require activestorage
 //= require scripts
-
+//= require jquery_ujs
+//= require turbolinks
 
 
 //= require owl.carousel
