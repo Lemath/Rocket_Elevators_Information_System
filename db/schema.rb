@@ -10,18 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_10_29_192101) do
-
-  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-=======
 ActiveRecord::Schema.define(version: 2021_10_29_172618) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
 ActiveRecord::Schema.define(version: 2021_10_29_174731) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
->>>>>>> b411e2bf73a1c92077b90e361f0b8e1d63cdafd9
     t.integer "Userid"
     t.string "first_name"
     t.string "last_name"

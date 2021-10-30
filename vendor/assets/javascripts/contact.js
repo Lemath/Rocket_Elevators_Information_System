@@ -1,9 +1,4 @@
 /**	CONTACT FORM
-<<<<<<< HEAD
-<<<<<<< HEAD
-*************************************************** **/
-=======
->>>>>>> b411e2bf73a1c92077b90e361f0b8e1d63cdafd9
 
 var _hash = window.location.hash;
 

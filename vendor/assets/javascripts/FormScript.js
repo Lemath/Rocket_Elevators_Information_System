@@ -124,7 +124,6 @@ $(document).ready(function(){
         
 
     return $("#ele-num").val(numelevators.toLocaleString()),$("#price-unit").val(priceperunit.toLocaleString()+" $"),$("#ele-total").val(totalelevators.toLocaleString()+" $"),$("#total-fees").val(fees.toLocaleString()+" $"),$("#finalprice").val(final.toLocaleString()+" $")})   
-<<<<<<< HEAD
     })
 
 
@@ -141,6 +140,3 @@ $(document).ready(function(){
         document.getElementById("results").value = txt;
     }
 
-=======
-})
->>>>>>> b411e2bf73a1c92077b90e361f0b8e1d63cdafd9

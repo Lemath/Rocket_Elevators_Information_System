@@ -5,14 +5,7 @@
 <table class= "container table table-primary table-striped ">
   <thead>
     <tr>
-<<<<<<< HEAD
       <th>Building Type</th>
-=======
-      <th>Residential</th>
-      <th>Commercial</th>
-      <th>Corporate</th>
-      <th>Hybrid</th>
->>>>>>> b411e2bf73a1c92077b90e361f0b8e1d63cdafd9
       <th>Amount of elevator</th>
       <th>Price per elevator</th>
       <th>Total price of elevator</th>
@@ -25,14 +18,7 @@
   <tbody>
     <% @quotes.each do |quote| %>
       <tr>
-<<<<<<< HEAD
         <td><%= quote.building_type %></td>
-=======
-        <td><%= quote.residential %></td>
-        <td><%= quote.commercial %></td>
-        <td><%= quote.corporate %></td>
-        <td><%= quote.hybrid %></td>
->>>>>>> b411e2bf73a1c92077b90e361f0b8e1d63cdafd9
         <td><%= quote.amount_of_elevator %></td>
         <td><%= quote.price_per_elevator %></td>
         <td><%= quote.total_price_of_elevator %></td>
@@ -47,11 +33,6 @@
 </table>
 
 <br>
-<<<<<<< HEAD
 <div class="text-center">
 <%= link_to 'New Quote', new_quote_path ,class:"text-center btn btn-secondary"%>
 </div>
-=======
-
-<%= link_to 'New Quote', new_quote_path ,class:"text-center btn btn-secondary"%>
->>>>>>> b411e2bf73a1c92077b90e361f0b8e1d63cdafd9
