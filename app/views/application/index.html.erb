@@ -34,7 +34,7 @@
 						<!-- SLIDE  -->
 						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off"  data-title="Our Services" data-delay="7000">
 							<!-- MAIN IMAGE -->
-							<img src="assets/images/AdobeStock_162479912.jpeg"  alt="cover image"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+							<img <%= image_tag "AdobeStock_162479912.jpeg" %>
 
 							<div class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="90"
@@ -80,14 +80,14 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<a class="btn btn-primary btn-lg" href="#services">OUR SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-primary btn-lg" href="index#services">OUR SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 
 						<!-- SLIDE  -->
 						<li data-transition="parallaxtotop" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-title="Residential Solutions" data-delay="7000">
 							<!-- MAIN IMAGE -->
-							<img src="assets/images/AdobeStock_122227340.jpeg" alt="cover image"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+							<img <%= image_tag "AdobeStock_122227340.jpeg" %> 
 
 							<div class="overlay dark-4"><!-- dark overlay [0 to 9 opacity] --></div>
 
@@ -134,7 +134,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 4; max-width: auto;">
-									<a class="btn btn-primary btn-lg" href="#services">OUR SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-primary btn-lg" href="index#services">OUR SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 
 							<div class="tp-caption sfb tp-resizeme"
@@ -149,13 +149,13 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-									<a class="btn btn-danger btn-lg" href="quote.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-danger btn-lg" href="quote">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 						<!-- SLIDE  -->
 						<li data-transition="parallaxtoright" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-title="Corporate Solutions" data-delay="7000">
 							<!-- MAIN IMAGE -->
-							<img src="assets/images/AdobeStock_3294993.jpeg" alt="cover image"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+							<img <%= image_tag "AdobeStock_3294993.jpeg" %>
 
 							<div class="overlay dark-4"><!-- dark overlay [0 to 9 opacity] --></div>
 
@@ -202,7 +202,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 4; max-width: auto;">
-									<a class="btn btn-primary btn-lg" href="#services">OUR SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-primary btn-lg" href="index#services">OUR SERVICES &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 
 							<div class="tp-caption sfb tp-resizeme"
@@ -217,7 +217,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-									<a class="btn btn-danger btn-lg" href="quote.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
+									<a class="btn btn-danger btn-lg" href="quote">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 					</ul>
@@ -231,7 +231,7 @@
 
 
 			<!-- BUTTON CALLOUT -->
-			<a href="#" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
+			<a  class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
 				<span class="font-lato fs-30">
 					Rocket Elevators are the future, Check out why! 
 				</span>
@@ -246,26 +246,26 @@
 
 					<div class="row">
 						<div class="col-sm-4">
-								<img class="img-fluid" src="assets/images/AdobeStock_66781279.jpeg" alt="img" />
+								<img class="img-fluid" <%= image_tag "AdobeStock_66781279.jpeg" %>
 							</a>
 							<h3 class="mt-10">Award Winning Rockets</h3>
 							<p>Rocket Elevators has won over 20 prizes for multiple projects around the globe since Mathieu Houde has created the company in 1976.</p>
-							<a href="#portfolio" class="btn btn-default">The Awards </a>
+							<a href="index#portfolio" class="btn btn-default">The Awards </a>
 						</div>
 
 						<div class="col-sm-4">
-								<img class="img-fluid" src="assets/images/AdobeStock_73868131.jpeg" alt="img" />
+								<img class="img-fluid" <%= image_tag "AdobeStock_73868131.jpeg" %>
 							</a>
 							<h3 class="mt-10">Residential Solutions</h3>
 							<p>Rocket Elevators is proud of being the first rocket powered elevator company to offer their services to anyone! You can even have one in your shed!</p>
-							<a href="residential.html" class="btn btn-default">Residential Packages</a>
+							<a href="residential" class="btn btn-default">Residential Packages</a>
 						</div>
 
 						<div class="col-sm-4">
-							<img class="img-fluid" src="assets/images/AdobeStock_72034307.jpeg" alt="img" />
+							<img class="img-fluid" <%= image_tag "AdobeStock_72034307.jpeg" %>
 							<h3 class="mt-10">Commercial Solutions</h3>
 							<p>From regular rocket elevators to glass tubes and even custom dimensions, We have it all. Are you ready to elevate your business?</p>
-							<a href="commercial.html" class="btn btn-default">Corporate Packages</a>
+							<a href="commercial" class="btn btn-default">Corporate Packages</a>
 						</div>
 
 					</div>
@@ -278,16 +278,16 @@
 
 
 			<!-- Parallax -->
-			<section class="parallax parallax-1" style="background-image: url('assets/images/AdobeStock_53477661.jpeg');">
+			<section class="parallax parallax-1" style="background-image:url(<%= image_url('AdobeStock_53477661.jpeg')%>">
 				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
 
 				<div class="container">
 
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Elevating Businesses Since 1976</h2>
-						<a class="btn btn-primary btn-lg" href="quote.html">Get A Quote <i class="fa fa-angle-right"></i></a> 
+						<a class="btn btn-primary btn-lg" href="quote">Get A Quote <i class="fa fa-angle-right"></i></a> 
 						&nbsp; OR &nbsp; 
-						<a class="btn btn-primary btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
+						<a class="btn btn-primary btn-lg" href="index#contact">Contact Us <i class="fa fa-angle-right"></i></a>
 					</div>
 
 				</div>
@@ -307,10 +307,10 @@
 
 					<div class="text-center">
 						<ul class="nav nav-pills mix-filter mb-60">
-							<li data-filter="all" class="filter active"><a href="#">All</a></li>
-							<li data-filter="awards" class="filter"><a href="#">Awards</a></li>
-							<li data-filter="residential" class="filter"><a href="#">Residential</a></li>
-							<li data-filter="corporate" class="filter"><a href="#">Corporate</a></li>
+							<li data-filter="all" class="filter active"><a>All</a></li>
+							<li data-filter="awards" class="filter"><a>Awards</a></li>
+							<li data-filter="residential" class="filter"><a>Residential</a></li>
+							<li data-filter="corporate" class="filter"><a>Corporate</a></li>
 						</ul>
 					</div>
 
@@ -324,19 +324,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/Le_Stade_Olympique_3.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/Le_Stade_Olympique_3.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "Le_Stade_Olympique_3.jpg" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -356,19 +344,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/The-Vessel-Hudson-Yards-6.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/The-Vessel-Hudson-Yards-6.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "The-Vessel-Hudson-Yards-6.jpg" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -387,19 +363,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/Home-Elevator.png" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/Home-Elevator.png" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "Home-Elevator.png" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -417,19 +381,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/freight.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/freight.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "freight.jpg" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -449,19 +401,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/british-airways-i360.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/british-airways-i360.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "british-airways-i360.jpg" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -480,19 +420,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/car-elevator.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/car-elevator.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "car-elevator.jpg" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -512,19 +440,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/homeglasstube.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/homeglasstube.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "homeglasstube.jpg" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -544,19 +460,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/CARhomeelevator.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/CARhomeelevator.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "CARhomeelevator.jpg" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -575,19 +479,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/Nobel_Prize.png" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/Nobel_Prize.png" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "Nobel_Prize.png" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -605,19 +497,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/medalla-leonardodavinci.png" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/medalla-leonardodavinci.png" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "medalla-leonardodavinci.png" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -635,19 +515,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/winner-Charles-Stark-Draper.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/winner-Charles-Stark-Draper.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "winner-Charles-Stark-Draper.jpg" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -665,19 +533,7 @@
 
 								<div class="item-box">
 									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="assets/images/Edison-Gold-Award.png" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<img class="img-fluid" src="assets/images/Edison-Gold-Award.png" width="600" height="399" alt="">
+										<img class="img-fluid" <%= image_tag "Edison-Gold-Award.png" %>
 									</figure>
 
 									<div class="item-box-desc">
@@ -708,7 +564,7 @@
 					<div class="owl-carousel text-center owl-testimonial m-0" data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
 						<div class="testimonial" id="CEO">
 							<figure>
-								<img class="rounded" src="assets/images/CEO.jpg" alt="" />
+								<img class="rounded" <%= image_tag "CEO.jpg" %>
 							</figure>
 							<div class="testimonial-content p-0">
 								<p class="lead">Here at Rocket Elevators, we take pride in our work! And customer service will always be our priority number 1.</p>
@@ -720,7 +576,7 @@
 						</div>
 						<div class="testimonial" id="employee">
 							<figure>
-								<img class="rounded" src="assets/images/employee-of-the-month.jpg" alt="" />
+								<img class="rounded" <%= image_tag "employee-of-the-month.jpg" %>
 							</figure>
 							<div class="testimonial-content p-0">
 								<p class="lead">Rocket Elevators Changed my life!</p>
@@ -770,7 +626,7 @@
 					<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"4", "autoPlay": 4000, "navigation": true, "pagination": false}'>
 						<div class="img-hover">
 							<a href="https://www.cbc.ca/news/canada/thunder-bay/thunder-bay-elevator-1.6161292" target="_blank">
-								<img class="img-fluid" src="assets/images/News/thunder-bay.png" alt="">
+								<img class="img-fluid" <%= image_tag "News/thunder-bay.png" %>
 							</a>
 
 							<h4 class="text-left mt-20"><a href="https://www.cbc.ca/news/canada/thunder-bay/thunder-bay-elevator-1.6161292" target="_blank">Elevators for friends</a></h4>
@@ -785,7 +641,7 @@
 						</div>
 						<div class="img-hover">
 							<a href="https://www.guelphtoday.com/police/8000-in-damage-done-to-apartment-elevator-4348723" target="_blank">
-								<img class="img-fluid" src="assets/images/News/guelph-damage.jpg" alt="">
+								<img class="img-fluid" <%= image_tag "News/guelph-damage.jpg" %>
 							</a>
 
 							<h4 class="text-left mt-20"><a href="https://www.guelphtoday.com/police/8000-in-damage-done-to-apartment-elevator-4348723" target="_blank">8000$ Elevator Damage</a></h4>
@@ -800,7 +656,7 @@
 						</div>
 						<div class="img-hover">
 							<a href="https://www.tnonline.com/20210922/carbon-to-save-100k-on-elevator/" target="_blank">
-								<img class="img-fluid" src="assets/images/News/court-elevator.jpg" alt="">
+								<img class="img-fluid" <%= image_tag "News/court-elevator.jpg" %>
 							</a>
 
 							<h4 class="text-left mt-20"><a href="https://www.tnonline.com/20210922/carbon-to-save-100k-on-elevator/" target="_blank">County to save $100K on elevator</a></h4>
@@ -815,7 +671,7 @@
 						</div>
 						<div class="img-hover">
 							<a href="https://www.everythinglubbock.com/news/local-news/lubbock-pizza-delivery-man-falls-7-floors-in-raider-park-elevator/" target="_blank">
-								<img class="img-fluid" src="assets/images/News/raiderPark.jpg" alt="">
+								<img class="img-fluid" <%= image_tag "News/raiderPark.jpg" %>
 							</a>
 
 							<h4 class="text-left mt-20"><a href="https://www.everythinglubbock.com/news/local-news/lubbock-pizza-delivery-man-falls-7-floors-in-raider-park-elevator/" target="_blank">Unlucky Pizza Delivery</a></h4>
@@ -830,7 +686,7 @@
 						</div>
 						<div class="img-hover">
 							<a href="https://buffalonews.com/news/local/crime-and-courts/two-rescued-via-helicopter-from-top-of-buffalo-grain-elevator/article_450d8e3a-16ea-11ec-9bf3-2704fa76f0df.html" target="_blank">
-								<img class="img-fluid" src="assets/images/News/helicopter-rescue.png" alt="">
+								<img class="img-fluid" <%= image_tag "News/helicopter-rescue.png" %>
 							</a>
 							<h4 class="text-left mt-20"><a href="https://buffalonews.com/news/local/crime-and-courts/two-rescued-via-helicopter-from-top-of-buffalo-grain-elevator/article_450d8e3a-16ea-11ec-9bf3-2704fa76f0df.html" target="_blank">Helicopter Rescue</a></h4>
 							<p class="text-left">An Erie County Sheriff's helicopter rescued two people from the top of a grain elevator on Ohio Street late Wednesday after one of the people suffered a medical emergency, according to a Buffalo police spokesman.</p>
@@ -844,7 +700,7 @@
 						</div>
 						<div class="img-hover">
 							<a href="https://leadership.ng/covid-19-vsf-donates-elevator-to-health-ministry/" target="_blank">
-								<img class="img-fluid" src="assets/images/News/VSFdonation.png" alt="">
+								<img class="img-fluid" <%= image_tag "News/VSFdonation.png" %>
 							</a>
 							<h4 class="text-left mt-20"><a href="https://leadership.ng/covid-19-vsf-donates-elevator-to-health-ministry/" target="_blank">VSF Donates Elevator</a></h4>
 							<p class="text-left">The Victim Support Fund (VSF) has donated an elevator to the Federal !Ministry of Health as a means of supporting the ease of tackling COVID-19 pandemic.</p>
@@ -875,62 +731,62 @@
 					<ul class="row clients-dotted list-inline">
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/Amazon-logo.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/Amazon-logo.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/nintendo.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/nintendo.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/microsoft.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/microsoft.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/The_Boring_Company.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/The_Boring_Company.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/blizzard.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/blizzard.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/Coffee-Stain.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/Coffee-Stain.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/Nasa.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/Nasa.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/steam.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/steam.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/samsung.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/samsung.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/motion-raceworks.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/motion-raceworks.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/summit-racing.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/summit-racing.png" %>
 							</span>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
 							<span href="#">
-								<img class="img-fluid" src="assets/images/Customer_logos/google.png" alt="client" />
+								<img class="img-fluid" <%= image_tag "Customer_logos/google.png" %>
 							</span>
 						</li>
 					</ul>

@@ -91,6 +91,8 @@
 		border-bottom:0;
 	}
 
+
+
 		#header li.search .search-box {
 			margin:0 !important;
 			position:fixed;
@@ -100,6 +102,7 @@
 			background-color:#fff;
 			border-top:rgba(0,0,0,0.1) 1px solid;
 		}
+<<<<<<< HEAD
 }
 
 
@@ -206,3 +209,6 @@
 		border-top:rgba(0,0,0,0.1) 1px solid;
 	}
 }
+=======
+}
+>>>>>>> b411e2bf73a1c92077b90e361f0b8e1d63cdafd9
