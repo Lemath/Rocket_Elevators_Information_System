@@ -23,3 +23,5 @@
 //= link extralayers.css
 //= link settings.css
 
+//= link smoothscroll.js
+//= link owl.carousel.min.js
