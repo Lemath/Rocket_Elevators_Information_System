@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :quotes
+<<<<<<< HEAD
+=======
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+>>>>>>> 17c6c16e68b33770a9ac54d2136ffc4d318602f6
   get 'quote/index', to: 'quote#index'
 
   devise_for :user, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }

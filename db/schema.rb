@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_192101) do
+ActiveRecord::Schema.define(version: 2021_10_29_172618) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+ActiveRecord::Schema.define(version: 2021_10_29_174731) do
+
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "Userid"
     t.string "first_name"
     t.string "last_name"
@@ -68,6 +71,10 @@ ActiveRecord::Schema.define(version: 2021_10_29_192101) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 17c6c16e68b33770a9ac54d2136ffc4d318602f6
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "amount_of_elevator"
     t.string "price_per_elevator"
@@ -84,6 +91,12 @@ ActiveRecord::Schema.define(version: 2021_10_29_192101) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+<<<<<<< HEAD
+=======
+=======
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+>>>>>>> b411e2bf73a1c92077b90e361f0b8e1d63cdafd9
+>>>>>>> 17c6c16e68b33770a9ac54d2136ffc4d318602f6
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
