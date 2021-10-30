@@ -1,24 +1,6 @@
-# README
+This Program purpose is to make a dynamic web sites for our client's to admistrate and use our back office.
+In there you can see the list of employees, list of quotes and users.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Unfortunately, due to software problems we have not completed entirely the back office.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-New_moon
