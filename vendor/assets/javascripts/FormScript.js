@@ -83,7 +83,7 @@ $(document).ready(function(){
             console.log(numelevators)
         }
 
-        else if($(".corporate-hybrid").is(":checked")){
+        else if($("#corporate").is(":checked") || $("#hybrid").is(":checked")){
             var a = Math.ceil($("#num-floors").val())
             var b = Math.ceil($("#num-bsmt").val())
             var c = Math.ceil($("#num-occupants").val())
@@ -100,43 +100,36 @@ $(document).ready(function(){
             console.log(numelevators)
         }
 
-            if($("#standard").is(":checked")){
-                totalelevators = numelevators*standard;
-                fees = (totalelevators/100)*10
-                final = totalelevators+fees
-                priceperunit = 7565
-            }
-            
-            else if($("#premium").is(":checked")){
-                totalelevators = numelevators*premium;
-                fees = (totalelevators/100)*13
-                final = totalelevators+fees
-                priceperunit = 12345
-            }
+        if($("#standard").is(":checked")){
+            totalelevators = numelevators*standard;
+            fees = (totalelevators/100)*10
+            final = totalelevators+fees
+            priceperunit = 7565
+        }
+        
+        else if($("#premium").is(":checked")){
+            totalelevators = numelevators*premium;
+            fees = (totalelevators/100)*13
+            final = totalelevators+fees
+            priceperunit = 12345
+        }
 
-            else if($("#excelium").is(":checked")){
-                totalelevators = numelevators*excelium;
-                fees = (totalelevators/100)*16
-                final = totalelevators+fees
-                priceperunit = 15400
-            }         
+        else if($("#excelium").is(":checked")){
+            totalelevators = numelevators*excelium;
+            fees = (totalelevators/100)*16
+            final = totalelevators+fees
+            priceperunit = 15400
+        }         
         
         
 
-    return $("#ele-num").val(numelevators.toLocaleString()),$("#price-unit").val(priceperunit.toLocaleString()+" $"),$("#ele-total").val(totalelevators.toLocaleString()+" $"),$("#total-fees").val(fees.toLocaleString()+" $"),$("#finalprice").val(final.toLocaleString()+" $")})   
+        return $("#ele-num").val(numelevators.toString()),$("#price-unit").val(priceperunit.toString()),$("#ele-total").val(totalelevators.toString()),$("#total-fees").val(fees.toString()),$("#finalprice").val(final.toString())})   
     })
 
 
     // radio btn value 
     function radioText(){
-        let building_btn = document.forms[0];
-        let txt = "";
-        let i;
-        for (i=0; i< building_btn.length; i++){
-            if (building_btn[i].checked) {
-                txt = txt + building_btn[i].value +"";
-            }
-        }
-        document.getElementById("results").value = txt;
+       
+        document.getElementById("results").value = $('input[name="building_btn"]:checked').val();
     }
 
