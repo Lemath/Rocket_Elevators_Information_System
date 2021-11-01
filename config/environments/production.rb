@@ -23,11 +23,11 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = Uglifier.new(harmony: true)
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -95,13 +95,13 @@ Rails.application.configure do
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 # Disable Rails's static asset server (Apache or nginx will already do this)  
-config.serve_static_assets = false
+config.serve_static_assets = true
 
 # Compress JavaScripts and CSS  
 config.assets.compress = true
 
 # Don't fallback to assets pipeline if a precompiled asset is missed  
-config.assets.compile = false
+config.assets.compile = true
 
 # Generate digests for assets URLs  
 config.assets.digest = true
