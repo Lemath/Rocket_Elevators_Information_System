@@ -36,9 +36,10 @@
 						</button>
 
 						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
-							<%= image_tag "R2.png" %>
-						</a>
+						
+						<%= link_to home_index_path, class:"logo float-left scrollTo" do %>
+							<%= image_tag("R2") %>
+						<% end %>
 
 						<!-- 
 							Top Nav 
@@ -57,34 +58,22 @@
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 									<li class="active"><!-- HOME -->
-										<a href="index">
-											HOME
-										</a>
+										<%= link_to "HOME", home_index_path(:anchor => 'top')  %>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="index#services">
-											SERVICES
-										</a>
+										<%= link_to "SERVICES", home_index_path(:anchor => 'services') %>
 									</li>
 									<li><!-- WORK -->
-										<a href="index#portfolio">
-											PORTFOLIO
-										</a>
+										<%= link_to "PORTFOLIO", home_index_path(:anchor => 'portfolio') %>
 									</li>
 									<li><!-- NEWS -->
-										<a href="index#news">
-											NEWS
-										</a>
+										<%= link_to "NEWS", home_index_path(:anchor => 'news') %>
 									</li>
 									<li><!-- CLIENTS -->
-										<a href="index#clients">
-											CLIENTS
-										</a>
+										<%= link_to "CLIENTS", home_index_path(:anchor => 'clients') %>
 									</li>
 									<li><!-- CONTACT -->
-										<a href="index#contact">
-											CONTACT
-										</a>
+									<%= link_to "CONTACT", home_index_path(:anchor => 'contact') %>
 									</li>
 									<!-- LOGIN -->
 									<%if user_signed_in? %>
