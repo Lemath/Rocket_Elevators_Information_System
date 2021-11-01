@@ -23,10 +23,10 @@
 
 //= require activestorage
 //= require scripts
-
+//= require jquery_ujs
 
 
 //= require owl.carousel
 //= require bootstrap-sprockets
 //= require smoothscroll
-//= require_tree .
+
