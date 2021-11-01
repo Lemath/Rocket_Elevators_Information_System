@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_192101) do
     t.string "last_name"
     t.string "email"
     t.string "title"
+    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
