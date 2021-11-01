@@ -22,6 +22,8 @@
 //= require mixitup
 
 //= require activestorage
+//= require scripts
+//= require jquery_ujs
 
 
 //= require owl.carousel
