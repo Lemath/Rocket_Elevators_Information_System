@@ -157,32 +157,33 @@
 								<div class="row" id="form-results">
 									<div class="field form-group">
 										<label>Amount of elevators:</label>
-										<%= form.text_field :amount_of_elevator, id:"ele-num", class:"form-control col-6", placeholder: "0", :readonly => true %>
+										<%= form.text_field :amount_of_elevator, id:"ele-num", class:"form-control col-10", placeholder: "0", :readonly => true %>
 									</div>
 								  <div class="field form-group">
 										<label>Price per Elevator:</label>
-										<%= form.text_field :price_per_elevator, id:"price-unit", class:"form-control col-6", placeholder: "0", :readonly => true %>
+										<%= form.text_field :price_per_elevator, id:"price-unit", class:"form-control col-10", placeholder: "0", :readonly => true %>
 									</div>
 									<div class="field form-group">
 										<label>Total Price of Elevators:</label>
-										<%= form.text_field :total_price_of_elevator, id:"ele-total", class:"form-control col-6", placeholder: "0", :readonly => true %>
+										<%= form.text_field :total_price_of_elevator, id:"ele-total", class:"form-control col-10", placeholder: "0", :readonly => true %>
 									</div>
 									<div class="field form-group">
 										<label>Installation Fees:</label>
-										<%= form.text_field :installation, id:"total-fees", class:"form-control col-6", placeholder: "0", :readonly => true %>
+										<%= form.text_field :installation, id:"total-fees", class:"form-control col-10", placeholder: "0", :readonly => true %>
 									</div>
 									<div class="field form-group">
 										<label>Total Price:</label>
-										<%= form.text_field :total_price, id:"finalprice", class:"form-control col-6", placeholder: "0", :readonly => true %>
+										<%= form.text_field :total_price, id:"finalprice", class:"form-control col-10", placeholder: "0", :readonly => true %>
 									</div> 
 										<div class="field form-group">
-										<%= form.text_field :user_id, id: :quote_user_id, class:"form-control col-6", value: current_user.id, type: :hidden %>
+										<%= form.text_field :user_id, id: :quote_user_id, class:"form-control col-10", value: current_user.id, type: :hidden %>
 									</div> 
 								  <div>
 										<%= form.hidden_field :building_type, id:"results" %> 
 									</div>
 								  <input type="text" label= "results" id="results" size="20" hidden> 
 									<div class="actions">
+									<br>
 										<%= form.submit class:"btn btn-primary", :onclick => "radioText()" %>
                         		
 								  </div>
