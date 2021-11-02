@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_01_183101) do
+ActiveRecord::Schema.define(version: 2021_11_02_150321) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "Userid"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -37,6 +36,9 @@ ActiveRecord::Schema.define(version: 2021_11_01_183101) do
     t.boolean "hybrid"
     t.string "building_type"
     t.string "string"
+    t.string "integer"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
