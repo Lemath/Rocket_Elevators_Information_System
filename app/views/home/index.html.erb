@@ -862,66 +862,52 @@
 							</div><!-- /Alert Mandatory -->
 
 
-							<form  method="post" enctype="multipart/form-data">
 								<fieldset>
-									<input type="hidden" name="action" value="contact_send" />
+								<input type="hidden" name="action" value="contact_send" />
 									
-								    <%= form_with(model: lead, local: true) do |form| %>
-
+									<%= form_with url:"/leads", method: :post do |form| %>
 										<div class="row">
 											<div class="col-md-4">
 												<label for="contact:name">Full Name *</label>
-												<%# <input required type="text" value="" class="form-control" name="contact[name][required]" id="name"> %>
 												<%= form.text_field :full_name_contact %>
 
 												
 											</div>
 											<div class="col-md-4">
 												<label for="contact:email">E-mail Address *</label>
-												<%# <input required type="email" value="" class="form-control" name="contact[email][required]" id="email"> %>
 												<%= form.text_field :email %>
 											</div>
 											<div class="col-md-4">
 												<label for="contact:phone">Phone</label>
 												<%= form.text_field :phone %>
-												<%# <input type="text" value="" class="form-control" name="contact[phone]" id="phone"> %>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-4">
 												<label for="contact:company_name">Company Name</label>
-												<%# <input type="text" value="" class="form-control" name="contact[company_name]" id="company_name"> %>
 												<%= form.text_field :company_name %>
 
 											</div>
 											<div class="col-md-4">
 												<label for="contact:project_name">Project Name *</label>
 												<%= form.text_field :project_name %>
-												<%# <input required type="text" value="" class="form-control" name="contact[project_name][required]" id="project_name"> %>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-4">
 												<label for="contact:project_description">Project Description *</label>
 												<%= form.text_area :project_description %>
-												<%# <textarea required maxlength="10000" rows="8" class="form-control" name="contact[project_description][required]" id="project_description"></textarea> %>
 											</div>
-											
+
 											<div class="col-md-4">
 												<label for="contact:department">Department</label>
-												<select class="form-control pointer" name="contact[department]" id="department">
-													<option value="">--- Select ---</option>
-													<option value="Marketing">Marketing</option>
-													<option value="Webdesign">Webdesign</option>
-													<option value="Architecture">Architecture</option>
-												</select>
+												<%= form.select :department, ["Marketing", "Webdesign","Architecture"] %>												
 											</div>
 										</div>
 									<div class="row">
 											<div class="col-md-12">
 												<label for="contact:message">Message *</label>
 												<%= form.text_area :message %>
-												<%# <textarea required maxlength="10000" rows="4" class="form-control" name="contact[message]" id="message"></textarea> %>
 											</div>
 									</div>
 									<div class="row">
@@ -937,11 +923,10 @@
 									<div class="actions">
 										<%= form.submit %>
 									</div>
-									<% end %>
+								<% end %>
 
 								</fieldset>
 			
-							</form>
 
 						</div>
 						<!-- /FORM -->
