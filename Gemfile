@@ -49,8 +49,8 @@ gem 'popper_js', '~> 2.9', '>= 2.9.3'
 gem 'magnific-popup-rails', '~> 1.1'
 gem 'jquery-turbolinks', '~> 2.1'
 
-
-
+gem 'multiverse'
+gem 'pg'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 
