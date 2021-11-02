@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   get 'home/residential', to: 'home#residential'
-  get '/commercial', to: 'home#commercial'
+  get 'home/commercial', to: 'home#commercial'
 
 
 
