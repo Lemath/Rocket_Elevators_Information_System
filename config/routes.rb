@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+  resources :addresses
   resources :leads
   resources :quotes
   resources :employees
@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   devise_for :user, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
   get 'home/index', to: 'home#index'
   root to: 'home#index'
-  
+ 
   post 'home/index',to: 'home#index'
   get 'home/residential', to: 'home#residential'
   get 'home/commercial', to: 'home#commercial'
+
+  post 'home/index',to: 'leads#create'
+
+  
   
 
 

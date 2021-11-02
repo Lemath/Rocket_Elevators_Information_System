@@ -866,9 +866,10 @@
 								<input type="hidden" name="action" value="contact_send" />
 									
 									<%= form_with url:"/leads", method: :post do |form| %>
+								
 										<div class="row">
 											<div class="col-md-4">
-												<label for="contact:name">Full Name *</label>
+												<label for="contact:full_name_contact">Full Name *</label>
 												<%= form.text_field :full_name_contact %>
 
 												

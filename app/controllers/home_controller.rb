@@ -5,5 +5,6 @@ class HomeController < ApplicationController
   helper_method:lead
   def lead
   end
+  
 
 end
