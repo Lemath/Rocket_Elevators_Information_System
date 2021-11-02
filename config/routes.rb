@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'home/index', to: 'home#index'
   root to: 'home#index'
 
-  get 'home/residential', to: 'home#residential'
-  get 'home/commercial', to: 'home#commercial'
+  get '/residential', to: 'home#residential'
+  get '/commercial', to: 'home#commercial'
 
 
 
