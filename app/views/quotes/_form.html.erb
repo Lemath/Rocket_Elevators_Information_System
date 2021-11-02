@@ -175,6 +175,9 @@
 										<label>Total Price:</label>
 										<%= form.text_field :total_price, id:"finalprice", class:"form-control col-6", placeholder: "0", :readonly => true %>
 									</div> 
+										<div class="field form-group">
+										<%= form.text_field :user_id, id: :quote_user_id, class:"form-control col-6", value: current_user.id, type: :hidden %>
+									</div> 
 								  <div>
 										<%= form.hidden_field :building_type, id:"results" %> 
 									</div>
