@@ -866,6 +866,7 @@
 								<input type="hidden" name="action" value="contact_send" />
 									
 									<%= form_with url:"/leads", method: :post do |form| %>
+									  
 								
 										<div class="row">
 											<div class="col-md-4">
@@ -914,6 +915,7 @@
 									<div class="row">
 											<div class="col-md-12">
 												<label for="contact:attachment">File Attachment</label>
+												<%= form.file_field :attachments, multiple: true, direct_upload: true %>
 
 												<!-- custom file upload -->
 												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="attachment" data-btn-text="Select a File" />
@@ -924,6 +926,7 @@
 									<div class="actions">
 										<%= form.submit %>
 									</div>
+									
 								<% end %>
 
 								</fieldset>
