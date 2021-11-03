@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_154406) do
+ActiveRecord::Schema.define(version: 2021_11_03_175416) do
 
-  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_154406) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -52,6 +52,21 @@ ActiveRecord::Schema.define(version: 2021_11_03_154406) do
     t.string "type_of_building"
     t.integer "number_of_floors_served"
     t.string "status"
+    t.string "information"
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.integer "columnid"
+    t.integer "serial_number"
+    t.string "model"
+    t.string "type_of_building"
+    t.string "status"
+    t.date "date_of_commissioning"
+    t.date "date_of_last_inspection"
+    t.string "certificate_of_inspection"
     t.string "information"
     t.string "notes"
     t.datetime "created_at", null: false
