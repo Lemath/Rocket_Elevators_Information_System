@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Columnid:</strong>
-  <%= @elevator.columnid %>
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    Elevator of Column:<%= @elevator.columnid %>
 </p>
 
 <p>
@@ -50,5 +51,6 @@
   <%= @elevator.notes %>
 </p>
 
-<%= link_to 'Edit', edit_elevator_path(@elevator),class: "btn btn-primary text-light" %> |
+<%= link_to 'Edit', edit_elevator_path(@elevator),class: "btn btn-primary text-light" %>
 <%= link_to 'Back', elevators_path, class: "btn btn-secondary text-light" %>
+</div>
