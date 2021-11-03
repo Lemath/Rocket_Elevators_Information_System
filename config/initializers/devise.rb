@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -37,6 +36,8 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+
+  
   config.http_authenticatable = false
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
