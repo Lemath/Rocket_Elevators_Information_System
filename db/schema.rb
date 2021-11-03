@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_11_02_150321) do
+=======
+ActiveRecord::Schema.define(version: 2021_11_01_151447) do
+>>>>>>> 15a7e05bbd79c1f589b93941c530df8a8505c9cc
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name"
@@ -18,6 +22,22 @@ ActiveRecord::Schema.define(version: 2021_11_02_150321) do
     t.string "email"
     t.string "title"
     t.boolean "admin"
+<<<<<<< HEAD
+=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "full_name_contact"
+    t.string "company_name"
+    t.string "email"
+    t.string "phone"
+    t.string "project_name"
+    t.string "project_description"
+    t.string "department"
+    t.string "message"
+>>>>>>> 15a7e05bbd79c1f589b93941c530df8a8505c9cc
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

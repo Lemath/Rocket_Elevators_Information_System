@@ -15,13 +15,3 @@
  *= require_self
  */
 
-@import "bootstrap";
-@import "bootstrap.min";
-@import "font-awesome";
-
-@import "extralayers";
-@import "settings";
-@import "essentials";
-@import "header-1";
-@import "layout";
-@import "blue";
