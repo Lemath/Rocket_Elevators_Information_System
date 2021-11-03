@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :elevators
+  resources :columns
   resources :addresses
   resources :leads
   resources :quotes
