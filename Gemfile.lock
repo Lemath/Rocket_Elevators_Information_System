@@ -112,6 +112,8 @@ GEM
     ed25519 (1.2.4)
     erubi (1.10.0)
     execjs (2.8.1)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.4)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
@@ -315,6 +317,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.8)
   ed25519 (~> 1.2, >= 1.2.4)
+  faker
   font-awesome-rails (~> 4.7, >= 4.7.0.7)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.4)
