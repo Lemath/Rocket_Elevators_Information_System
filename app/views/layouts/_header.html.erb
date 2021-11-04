@@ -38,7 +38,7 @@
 						<!-- Logo -->
 						
 						<%= link_to home_index_path, class:"logo float-left scrollTo" do %>
-							<%= image_tag("R2") %>
+							<%= image_tag("R2.png") %>
 						<% end %>
 
 						<!-- 
@@ -58,7 +58,7 @@
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 									<li class="active"><!-- HOME -->
-										<%= link_to "HOME", home_index_path(:anchor => 'top')  %>
+										<%= link_to "HOME", home_index_path  %>
 									</li>
 									<li><!-- SERVICES -->
 										<%= link_to "SERVICES", home_index_path(:anchor => 'services') %>
@@ -74,6 +74,10 @@
 									</li>
 									<li><!-- CONTACT -->
 									<%= link_to "CONTACT", home_index_path(:anchor => 'contact') %>
+									</li>
+									<!-- QUOTE -->
+									<li class="nav-item">
+									<%=link_to "QUOTE", new_quote_path, class:"nav-link"%>
 									</li>
 									<!-- LOGIN -->
 									<%if user_signed_in? %>
@@ -105,6 +109,7 @@
 									<%=link_to "LOGIN", new_user_session_path, class:"nav-link"%>
 									</li>
 								<%end%>
+
 								</ul>
 
 							</nav>

@@ -1,5 +1,7 @@
 class QuotesController < ApplicationController
+  # before_action :set_quote, only: %i[ show edit update destroy ]
   before_action :set_quote, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /quotes or /quotes.json
   def index
@@ -64,6 +66,6 @@ class QuotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quote_params
-      params.require(:quote).permit(:amount_of_elevator, :price_per_elevator, :total_price_of_elevator, :installation, :total_price, :building_type)
+      params.require(:quote).permit(:amount_of_elevator, :price_per_elevator, :total_price_of_elevator, :installation, :total_price, :building_type, :user_id)
     end
 end
