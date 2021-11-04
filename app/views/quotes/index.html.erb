@@ -17,6 +17,7 @@
 
   <tbody>
     <% @quotes.each do |quote| %>
+      <% if quote.user == current_user%>
       <tr>
         <td><%= quote.building_type %></td>
         <td><%= quote.amount_of_elevator %></td>
@@ -24,15 +25,28 @@
         <td><%= quote.total_price_of_elevator %></td>
         <td><%= quote.installation %></td>
         <td><%= quote.total_price %></td>
-        <td><%= link_to 'Show', quote,class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Show', quote,class:"btn btn-default" %></td>
         <td><%= link_to 'Edit', edit_quote_path(quote),class:"btn btn-primary" %></td>
         <td><%= link_to 'Destroy', quote,class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 <div class="text-center">
-<%= link_to 'New Quote', new_quote_path ,class:"text-center btn btn-secondary"%>
+<%= link_to 'New Quote', new_quote_path ,class:"text-center btn btn-primary"%>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

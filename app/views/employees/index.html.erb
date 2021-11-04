@@ -23,16 +23,16 @@
         <td><%= employee.last_name %></td>
         <td><%= employee.email %></td>
         <td><%= employee.title %></td>
-        <td><%= link_to 'Show', employee,class:"btn btn-secondary" %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee),class:"btn btn-primary" %></td>
-        <td><%= link_to 'Delete', employee,class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', employee,class:"btn btn-secondary text-light" %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee),class:"btn btn-primary text-light" %></td>
+        <td><%= link_to 'Delete', employee,class:"btn btn-danger text-light", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <div class="text-center">
-<%= link_to 'New Employee', new_employee_path, class:"text-center btn btn-secondary" %>
+<%= link_to 'New Employee', new_employee_path, class:"text-center btn btn-primary text-light" %>
 </div>
 <br/>
 <br/>

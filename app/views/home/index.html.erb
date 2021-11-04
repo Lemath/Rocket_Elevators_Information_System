@@ -232,7 +232,7 @@
 
 			<!-- BUTTON CALLOUT -->
 			<a  class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
-				<span class="font-lato fs-30">
+				<span class="text-light font-lato fs-30">
 					Rocket Elevators are the future, Check out why! 
 				</span>
 			</a>
@@ -249,7 +249,7 @@
 							<%= image_tag "AdobeStock_66781279.jpeg", class:"img-fluid" %>
 							<h3 class="mt-10">Award Winning Rockets</h3>
 							<p>Rocket Elevators has won over 20 prizes for multiple projects around the globe since Mathieu Houde has created the company in 1976.</p>
-							<a href="index#portfolio" class="btn btn-default">The Awards </a>
+							<a <%= link_to "The awards", home_index_path(:anchor => 'portfolio'), class:"btn btn-default" %> 
 						</div>
 
 						<div class="col-sm-4">
@@ -816,120 +816,70 @@
 
 							<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
 
-							
-							<!--
-								MESSAGES
-								
-									How it works?
-									The form data is posted to php/contact.php where the fields are verified!
-									php.contact.php will redirect back here and will add a hash to the end of the URL:
-										#alert_success 		= email sent
-										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
-										#alert_mandatory	= email not sent - required fields empty
-										Hashes are handled by assets/js/contact.js
-
-									Form data: required to be an array. Example:
-										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-										Also, add `required` to input fields if is a mandatory field. 
-										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-
-									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-
-									WARNING! Do not change the `email` and `name`!
-												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-							-->
-
-							<!-- Alert Success -->
-							<div id="alert_success" class="alert alert-success mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Thank You!</strong> Your message successfully sent!
-							</div><!-- /Alert Success -->
-
-
-							<!-- Alert Failed -->
-							<div id="alert_failed" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>[SMTP] Error!</strong> Internal server error!
-							</div><!-- /Alert Failed -->
-
-
-							<!-- Alert Mandatory -->
-							<div id="alert_mandatory" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-							</div><!-- /Alert Mandatory -->
-
-
-							<form action="php/contact.php" method="post" enctype="multipart/form-data">
 								<fieldset>
-									<input type="hidden" name="action" value="contact_send" />
 
-									<div class="row">
+								<input type="hidden" name="action" value="contact_send" />
+									
+									<%= form_with url:"/leads", method: :post do |form| %>
+
+										<div class="row">
 											<div class="col-md-4">
-												<label for="contact:name">Full Name *</label>
-												<input required type="text" value="" class="form-control" name="contact[name][required]" id="name">
+												<label for="contact:full_name_contact">Full Name *</label>
+												<%= form.text_field :full_name_contact %>
+
+												
 											</div>
 											<div class="col-md-4">
 												<label for="contact:email">E-mail Address *</label>
-												<input required type="email" value="" class="form-control" name="contact[email][required]" id="email">
+												<%= form.text_field :email %>
 											</div>
 											<div class="col-md-4">
 												<label for="contact:phone">Phone</label>
-												<input type="text" value="" class="form-control" name="contact[phone]" id="phone">
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-md-8">
-												<label for="contact:company_name">Company Name</label>
-												<input type="text" value="" class="form-control" name="contact[company_name]" id="company_name">
-											</div>
-											<div class="col-md-4">
-												<label for="contact:project_name">Project Name *</label>
-												<input required type="text" value="" class="form-control" name="contact[project_name][required]" id="project_name">
+												<%= form.text_field :phone %>
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-md-8">
-												<label for="contact:project_description">Project Description *</label>
-												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[project_description][required]" id="project_description"></textarea>
+											<div class="col-md-4">
+												<label for="contact:company_name">Company Name</label>
+												<%= form.text_field :company_name %>
+
 											</div>
 											<div class="col-md-4">
-												<label for="contact:department">Department</label>
-												<select class="form-control pointer" name="contact[department]" id="department">
-													<option value="">--- Select ---</option>
-													<option value="Marketing">Marketing</option>
-													<option value="Webdesign">Webdesign</option>
-													<option value="Architecture">Architecture</option>
-												</select>
+												<label for="contact:project_name">Project Name *</label>
+												<%= form.text_field :project_name %>
 											</div>
-								</div>
+										</div>
+										<div class="row">
+											<div class="col-md-4">
+												<label for="contact:project_description">Project Description *</label>
+												<%= form.text_area :project_description %>
+											</div>
+
+											<div class="col-md-4">
+												<label for="contact:department">Department</label>
+												<%= form.select :department, ["Marketing", "Webdesign","Architecture"] %>												
+											</div>
+										</div>
 									<div class="row">
 											<div class="col-md-12">
 												<label for="contact:message">Message *</label>
-												<textarea required maxlength="10000" rows="4" class="form-control" name="contact[message]" id="message"></textarea>
+												<%= form.text_area :message %>
 											</div>
 									</div>
 									<div class="row">
 											<div class="col-md-12">
 												<label for="contact:attachment">File Attachment</label>
-
-												<!-- custom file upload -->
-												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="attachment" data-btn-text="Select a File" />
-												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
-
+												<%= form.file_field :file, multiple: true, direct_upload: true %>
 											</div>
 									</div>
+									<div class="actions">
+										<%= form.submit 'Save', data: { confirm: 'Are you sure you want to submit this form?' } %>
+									</div>
+									
+								<% end %>
 
 								</fieldset>
-
-								<div class="row">
-									<div class="col-md-12">
-										<a class="btn btn-primary" id="contact-button"><i class="fa fa-check"></i> SEND MESSAGE</a>
-									</div>
-								</div>
-							</form>
+			
 
 						</div>
 						<!-- /FORM -->
