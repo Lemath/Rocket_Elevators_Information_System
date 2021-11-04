@@ -51,6 +51,8 @@ gem 'jquery-turbolinks', '~> 2.1'
 
 gem 'multiverse'
 gem 'pg'
+gem 'whenever'
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 
@@ -88,3 +90,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "jquery-datatables", "~> 1.10"
