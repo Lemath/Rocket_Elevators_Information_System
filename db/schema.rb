@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_221251) do
+ActiveRecord::Schema.define(version: 2021_11_04_180435) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "type_of_address"
@@ -24,6 +24,21 @@ ActiveRecord::Schema.define(version: 2021_11_03_221251) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "Type"
+    t.string "Status"
+    t.string "Operation_Certificate"
+    t.string "Information"
+    t.string "Notes"
+    t.timestamp "Informations_Date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "building_id"
+    t.integer "employee_id"
+    t.index ["building_id"], name: "index_batteries_on_building_id"
+    t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -92,22 +107,6 @@ ActiveRecord::Schema.define(version: 2021_11_03_221251) do
     t.string "string"
     t.integer "user_id"
     t.index ["user_id"], name: "index_quotes_on_user_id"
-  end
-
-  create_table "table_batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "BuildingId"
-    t.string "Type"
-    t.string "Status"
-    t.string "EmployeeId"
-    t.string "Created"
-    t.datetime "At"
-    t.string "Updated"
-    t.string "Operation"
-    t.string "Certificate"
-    t.string "Information"
-    t.string "Notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
