@@ -30,3 +30,5 @@
 //= require bootstrap-sprockets
 //= require smoothscroll
 
+//= require chartkick
+//= require Chart.bundle
