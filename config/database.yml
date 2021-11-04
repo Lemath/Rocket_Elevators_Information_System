@@ -5,8 +5,9 @@ default: &default
   host: localhost
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: root1234
-  # port: 3306
+  password: root123456
+  port: 3000
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -21,5 +22,5 @@ test:
 production:
   <<: *default
   database: Rocket_Elevators_Information_System_production
-  username: Rocket_Elevators
-  password: <%= ENV['qetuo2468'] %>
+  username: Rocket_Elevators_Information_System
+  password: <%= ENV['ROCKET_ELEVATORS_INFORMATION_SYSTEM_DATABASE_PASSWORD'] %>
