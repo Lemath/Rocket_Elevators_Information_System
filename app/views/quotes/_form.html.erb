@@ -181,6 +181,7 @@
 								  <input type="text" label= "results" id="results" size="20" hidden> 
 									<div class="actions">
 									<br>
+									<%=form.text_field :user_id, id: :quote_user_id, class:"form-control", value: current_user.id, type: :hidden%>
 										<%= form.submit class:"btn btn-primary", :onclick => "radioText()" %>
                         		
 								  </div>
