@@ -1,9 +1,12 @@
 class Customer < ApplicationRecord
     belongs_to :address
+    belongs_to :user
+
     after_initialize do
         if new_record?
           self.customer_creation_date ||= DateTime.now
         end
+        
     def create
         # @customer = current_user.posts.build(quote_params)
         @customer.user_id=current_user.id
@@ -15,4 +18,5 @@ class Customer < ApplicationRecord
     end
 
     end
+
 end

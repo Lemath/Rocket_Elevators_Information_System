@@ -816,6 +816,12 @@
 
 							<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
 
+								<fieldset>
+
+								<input type="hidden" name="action" value="contact_send" />
+									
+									<%= form_with url:"/leads", method: :post do |form| %>
+
 							
 							<!--
 								MESSAGES
@@ -972,3 +978,4 @@
 				</div>
 			</section>
 			<!-- /CONTACT -->
+			<% end %>

@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
+<body class="text-center smoothscroll enable-animation">
 
-<h1>Addresses</h1>
+<h1 class= "display-5 fw-bold text-center">Addresses</h1>
 
-<table>
+<table class= "container table table-success table-striped ">
   <thead>
     <tr>
       <th>Type of address</th>
@@ -30,14 +31,15 @@
         <td><%= address.postal_code %></td>
         <td><%= address.country %></td>
         <td><%= address.notes %></td>
-        <td><%= link_to 'Show', address %></td>
-        <td><%= link_to 'Edit', edit_address_path(address) %></td>
-        <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', address,class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Edit', edit_address_path(address),class:"btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', address,class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Address', new_address_path %>
+<div class="text-center">
+  <%= link_to 'New Address', new_address_path, class:"btn btn-secondary" %>
+</div>
