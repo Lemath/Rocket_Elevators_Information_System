@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :elevators
   resources :columns
+  resources :batteries
   resources :customers
   resources :addresses
   resources :leads
