@@ -18,6 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.minute do
+every 1.day, at: '0:00 am' do
   runner "FactQuote.getQuotesData"
+  runner "FactContact.getContactsData"
+  runner "FactElevator.getElevatorsData"
 end
