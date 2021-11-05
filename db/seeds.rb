@@ -15,10 +15,10 @@ require "faker"
 #     leads.save
 # end
 
-number_and_street = Array["2415 Ch Ste-Foy","110 Grande Allée O","255 Av. Brock S","2250 Rue Guy"]
-suite_or_appartment = Array["2","4","6","12"]
-city = Array["Quebec","Quebec","Montreal","Montreal"]
-postal_code = Array["G1V 1T1","G1R 2G8","H4X 0A3","H3H 2M3"]
+number_and_street = Array["2415 Ch Ste-Foy","110 Grande Allée O","255 Av. Brock S","2250 Rue Guy","1020 Enterprise Way","3201 Jefferson Ave","425 St SW","1050 Côte du Beaver Hall","6869 Boul Métropolitain E","800 Boulevard René-Lévesque O","1800 Owens St","5505 Boul. Saint-Lauren" ]
+suite_or_appartment = Array["2","4","6","12","","","1","","","","","2000"]
+city = Array["Quebec","Quebec","Montreal","Montreal","Sunnyvale","Redwood City","Calgary","Montreal","Saint-Léonard","Montreal","San Francisco","Montreal"]
+postal_code = Array["G1V 1T1","G1R 2G8","H4X 0A3","H3H 2M3","94089","94062","T2P 3L8","H3B 5B4","H1P 1X8","H3B 1Y8","94158","H2T 1S6"]
 
 for i in 0...number_and_street.length()
     addresses = Address.new(
@@ -42,7 +42,7 @@ end
 
 1.times do
     customers = Customer.new(
-        user_id:users.id,
+        # user_id:users.id,
         customer_creation_date:Faker::Date.between(from: 3.years.ago, to: Date.today),
         company_name:Faker::Company.name,
         company_contact:Faker::Name.name,
@@ -66,11 +66,39 @@ end
         name_technical_building:Faker::Name.name,
         email_technical_building:Faker::Internet.email,
         phone_technical_building:Faker::PhoneNumber.phone_number,
-        customer_id: customers.id
+        # customer_id: customers.id
         )
     buildings.save
 end
 
+1.times do
+    elevators = Elevator.new(
+        # user_id:column_id,
+        serial_number:Faker::Number.number(digits: 9),
+        model:["Standard ","Premium","Excelium"].sample,
+        type_of_building:["Residential ","Commercial","Corporate","Hybrid"].sample,
+        status:["Online","Offline","Moving","Idle"].sample,
+        date_of_commissioning:Faker::Date.between(from: 3.years.ago, to: Date.today),
+        date_of_last_inspection:Faker::Date.between(from: 1.years.ago, to: Date.today),
+        certificate_of_inspection:Faker::Number.number(digits: 6),
+        information:Faker::Lorem.paragraph,
+        notes:Faker::Lorem.paragraph
+        )
+    elevators.save
+    # @user = ustomer.create(user_id:users.id)
+end
+
+
+# 1.times do
+#     quotes = Quote.create(
+#         # user_id:column_id,
+#         amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+#         price_per_elevator:Faker::Number.between(from: 1, to: 10),
+#         building_type:["Residential ","Commercial","Corporate","Hybrid"].sample,
+#     )
+#     quotes.save
+#     # @user = ustomer.create(user_id:users.id)
+# end
 
 1.times do 
     building_details = BuildingDetail.new(
@@ -94,7 +122,7 @@ end
 end
 
 1.times do
-    users = User.create!( 
+    users = User.new( 
         email:Faker::Internet.email,
         password:Faker::Alphanumeric.alphanumeric(number: 6),
         remember_created_at:Faker::Date.between(from: 3.years.ago, to: Date.today),

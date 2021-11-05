@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_152655) do
+ActiveRecord::Schema.define(version: 2021_11_04_191719) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "address_id"
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -81,7 +82,6 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "user_id"
-    t.string "customer_creation_date"
     t.string "company_name"
     t.string "company_headquarter"
     t.string "company_contact"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "address_id"
+    t.string "customer_creation_date"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -148,6 +149,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.boolean "hybrid"
     t.string "building_type"
     t.string "string"
+    t.string "integer"
     t.integer "user_id"
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
