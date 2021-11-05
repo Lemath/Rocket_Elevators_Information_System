@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
-    belongs_to :address
+    has_one :address
+    has_many :buildings
 
     def create
         # @customer = current_user.posts.build(quote_params)

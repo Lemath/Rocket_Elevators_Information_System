@@ -16,6 +16,7 @@ class BatteriesTest < ApplicationSystemTestCase
 
     fill_in "Employeeid", with: @battery.EmployeeId
     fill_in "Information", with: @battery.Information
+    fill_in "Informations date", with: @battery.Informations_Date
     fill_in "Notes", with: @battery.Notes
     fill_in "Operation certificate", with: @battery.Operation_Certificate
     fill_in "Status", with: @battery.Status
@@ -32,6 +33,7 @@ class BatteriesTest < ApplicationSystemTestCase
 
     fill_in "Employeeid", with: @battery.EmployeeId
     fill_in "Information", with: @battery.Information
+    fill_in "Informations date", with: @battery.Informations_Date
     fill_in "Notes", with: @battery.Notes
     fill_in "Operation certificate", with: @battery.Operation_Certificate
     fill_in "Status", with: @battery.Status

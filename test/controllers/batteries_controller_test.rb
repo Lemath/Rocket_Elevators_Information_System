@@ -17,7 +17,7 @@ class BatteriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create battery" do
     assert_difference('Battery.count') do
-      post batteries_url, params: { battery: { EmployeeId: @battery.EmployeeId, Information: @battery.Information, Notes: @battery.Notes, Operation_Certificate: @battery.Operation_Certificate, Status: @battery.Status, Type: @battery.Type } }
+      post batteries_url, params: { battery: { EmployeeId: @battery.EmployeeId, Information: @battery.Information, Informations_Date: @battery.Informations_Date, Notes: @battery.Notes, Operation_Certificate: @battery.Operation_Certificate, Status: @battery.Status, Type: @battery.Type } }
     end
 
     assert_redirected_to battery_url(Battery.last)
@@ -34,7 +34,7 @@ class BatteriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update battery" do
-    patch battery_url(@battery), params: { battery: { EmployeeId: @battery.EmployeeId, Information: @battery.Information, Notes: @battery.Notes, Operation_Certificate: @battery.Operation_Certificate, Status: @battery.Status, Type: @battery.Type } }
+    patch battery_url(@battery), params: { battery: { EmployeeId: @battery.EmployeeId, Information: @battery.Information, Informations_Date: @battery.Informations_Date, Notes: @battery.Notes, Operation_Certificate: @battery.Operation_Certificate, Status: @battery.Status, Type: @battery.Type } }
     assert_redirected_to battery_url(@battery)
   end
 
