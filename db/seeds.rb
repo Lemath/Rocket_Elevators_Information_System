@@ -1,4 +1,12 @@
 require "faker"
+1.times do
+    users = User.new( 
+        email:Faker::Internet.email,
+        password:Faker::Alphanumeric.alphanumeric(number: 6),
+        remember_created_at:Faker::Date.between(from: 3.years.ago, to: Date.today),
+        )
+    users.save
+end
 
 # 1.times do 
 #     leads = Lead.new(
@@ -35,14 +43,10 @@ for i in 0...number_and_street.length()
     addresses.save
 end
 
-# def new
-#     @user = User.new
-    
-# end
 
 1.times do
     customers = Customer.new(
-        # user_id:users.id,
+        user_id:users.id,
         customer_creation_date:Faker::Date.between(from: 3.years.ago, to: Date.today),
         company_name:Faker::Company.name,
         company_contact:Faker::Name.name,
@@ -57,23 +61,34 @@ end
     customers.save
 end
 
+# 1.times do
+#     buildings = Building.new(
+#         address_building:addresses.id,
+#         name_administrator_building:Faker::Name.name,
+#         email_administrator_building:Faker::Internet.email,
+#         phone_administrator_building:Faker::PhoneNumber.phone_number,
+#         name_technical_building:Faker::Name.name,
+#         email_technical_building:Faker::Internet.email,
+#         phone_technical_building:Faker::PhoneNumber.phone_number,
+#         # customer_id: customers.id
+#         )
+#     buildings.save
+# end
 1.times do
-    buildings = Building.new(
-        address_building:addresses.id,
-        name_administrator_building:Faker::Name.name,
-        email_administrator_building:Faker::Internet.email,
-        phone_administrator_building:Faker::PhoneNumber.phone_number,
-        name_technical_building:Faker::Name.name,
-        email_technical_building:Faker::Internet.email,
-        phone_technical_building:Faker::PhoneNumber.phone_number,
-        # customer_id: customers.id
+    columns = Column.new(
+        # batteryid: batteries.id,
+        type_of_building: ["Residential", "Commercial", "Corporate", "Hybrid"].sample ,
+        number_of_floors_served: Faker::Number.between(from: 5, to: 100),
+        status:["Online","Online","Online","Online","Online","Online","Online","Online","Online","Offline"].sample ,
+        information:Faker::Lorem.sentence ,
+        notes:Faker::Lorem.paragraph  ,
         )
-    buildings.save
+    columns.save
 end
 
 1.times do
     elevators = Elevator.new(
-        # user_id:column_id,
+        columnid:columns.id,
         serial_number:Faker::Number.number(digits: 9),
         model:["Standard ","Premium","Excelium"].sample,
         type_of_building:["Residential ","Commercial","Corporate","Hybrid"].sample,
@@ -85,7 +100,7 @@ end
         notes:Faker::Lorem.paragraph
         )
     elevators.save
-    # @user = ustomer.create(user_id:users.id)
+    
 end
 
 
@@ -104,31 +119,12 @@ end
     building_details = BuildingDetail.new(
         information_key: "Contruction Year", 
         value: Faker::Number.between(from: 1980, to: 2020) ,
-        building_id: buildings.id
+        # building_id: buildings.id
         )
     building_details.save
 end 
 
-1.times do
-    columns = Column.new(
-        # batteryid: batteries.id,
-        type_of_building: ["Residential", "Commercial", "Corporate", "Hybrid"].sample ,
-        number_of_floors_served: Faker::Number.between(from: 5, to: 100),
-        status:["Online","Online","Online","Online","Online","Online","Online","Online","Online","Offline"].sample ,
-        information:Faker::Lorem.sentence ,
-        notes:Faker::Lorem.paragraph  ,
-        )
-    columns.save
-end
 
-1.times do
-    users = User.new( 
-        email:Faker::Internet.email,
-        password:Faker::Alphanumeric.alphanumeric(number: 6),
-        remember_created_at:Faker::Date.between(from: 3.years.ago, to: Date.today),
-    )
-    users.save
-end
 
 # first_name = Array["Nicolas","Nadya","Martin","Mathieu","Patrick" ,"David","Mathieu","Thomas","Serge","Francis","Mathieu","David","Nicolas","David","Remi","Timothy","Kiril","Emmanuela","Abdul","Krista","Jonathan"]
 # last_name = Array["Genest","Fortier","Chantal","Houde","Thibault","Boutin","Lortie","Carrier","Savoie","Patry-Jessop","Lefrancois","Larochelle","Pineault","Amyot","Gagnon","Wever","Kleinerman","Derilus","Akeeb","Sheely","Murray"]

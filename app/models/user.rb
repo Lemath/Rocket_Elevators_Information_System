@@ -3,10 +3,9 @@
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         has_many :quote
+         has_many :quotes
+         belongs_to :user
+         
 
 
-def create
-    user = customer.users.create(user_id: users.id)
-end 
 end

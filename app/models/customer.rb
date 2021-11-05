@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
-    has_many :buildings
+    has_many :building
     belongs_to :address, optional: true
     belongs_to :user, optional: true
 
