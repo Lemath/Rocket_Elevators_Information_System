@@ -8,7 +8,7 @@ class FactElevator < PostgresDbRecord
       fact.Date_of_Commissioning = elevator.date_of_commissioning
       fact.BuildingId = elevator.column.battery.building.id#
       fact.CustomerId = elevator.column.battery.building.customer.id#
-      fact.Building_City = elevator.column.battery.building.building_city#
+      fact.Building_City = elevator.column.battery.building.address.city#
       fact.save
     end
   end
