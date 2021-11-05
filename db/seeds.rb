@@ -73,7 +73,7 @@ end
 
 1.times do
     columns = Column.new(
-        # batteryid: batteries.id,
+        batteryid: batteries.id,
         type_of_building: ["Residential", "Commercial", "Corporate", "Hybrid"].sample ,
         number_of_floors_served: Faker::Number.between(from: 5, to: 100),
         status:["Online","Online","Online","Online","Online","Online","Online","Online","Online","Offline"].sample ,
@@ -138,7 +138,6 @@ end
 
 
  
-
 
 
 
