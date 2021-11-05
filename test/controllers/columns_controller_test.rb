@@ -11,7 +11,7 @@ class ColumnsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_column_urlS
+    get new_column_url
     assert_response :success
   end
 

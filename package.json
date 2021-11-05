@@ -1,5 +1,8 @@
 {
   "name": "Rocket_Elevators_Information_System",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "rrad": "^1.1.0"
+  }
 }
