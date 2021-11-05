@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
-    belongs_to :address
-    belongs_to :user
+    has_many :buildings
+    belongs_to :address, optional: true
+    belongs_to :user, optional: true
 
     after_initialize do
         if new_record?
