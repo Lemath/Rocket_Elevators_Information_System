@@ -5,7 +5,7 @@ class DimCustomer < PostgresDbRecord
     dimension.Creation_Date = customer.created_at
     dimension.Contact_Full_Name = customer.company_contact
     dimension.Contact_Email = customer.company_email
-    dimension.NbElevators = 0#
+    dimension.NbElevators = 0
     customer.buildings.each do |building|
       building.batteries.each do |battery|
         battery.columns.each do |column|

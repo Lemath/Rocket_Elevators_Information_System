@@ -1,7 +1,7 @@
 class FactElevator < PostgresDbRecord
 
   def self.getElevatorsData
-    elevators = Elevator.where({ created_at: (Time.now - 5.day)..Time.now })
+    elevators = Elevator.where({ created_at: (Time.now - 25.hour)..Time.now })
 
     elevators.each do |elevator|
       fact = FactElevator.find_or_create_by(SerialNumber: elevator.serial_number)
