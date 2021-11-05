@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_152655) do
+ActiveRecord::Schema.define(version: 2021_11_04_180435) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "type_of_address"
     t.string "status"
     t.string "entity"
@@ -45,6 +45,21 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "Type"
+    t.string "Status"
+    t.string "Operation_Certificate"
+    t.string "Information"
+    t.string "Notes"
+    t.timestamp "Informations_Date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "building_id"
+    t.integer "employee_id"
+    t.index ["building_id"], name: "index_batteries_on_building_id"
+    t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,23 +94,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "Type"
-    t.string "Status"
-    t.string "Operation_Certificate"
-    t.string "Information"
-    t.string "Notes"
-    t.timestamp "Informations_Date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "building_id"
-    t.integer "employee_id"
-    t.index ["building_id"], name: "index_batteries_on_building_id"
-    t.index ["employee_id"], name: "index_batteries_on_employee_id"
-  end
-
-
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.string "customer_creation_date"
     t.string "company_name"
@@ -136,7 +135,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_name_contact"
     t.string "company_name"
     t.string "email"
@@ -151,7 +150,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.timestamp "request_date"
   end
 
-  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "amount_of_elevator"
     t.string "price_per_elevator"
     t.string "total_price_of_elevator"
@@ -169,7 +168,7 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
