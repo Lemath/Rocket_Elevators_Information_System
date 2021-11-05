@@ -164,11 +164,7 @@ ActiveRecord::Schema.define(version: 2021_11_05_172311) do
     t.string "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "residential"
-    t.boolean "commercial"
-    t.boolean "corporate"
-    t.boolean "hybrid"
-    t.string "building_type"
+    t.string "building_type", placeholder: "residential,"
     t.string "string"
     t.integer "user_id"
     t.string "company_name"
