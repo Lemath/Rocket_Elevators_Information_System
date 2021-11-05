@@ -1,8 +1,6 @@
 require "faker"
 
-
-
-100.times do 
+1.times do 
     leads = Lead.new(
         full_name_contact:Faker::Name.name ,
         company_name:Faker::Company.name,
@@ -12,15 +10,11 @@ require "faker"
         project_description:Faker::Lorem.paragraph,
         department:["Marketing","Webdesign","Architecture"].sample,
         message:Faker::Lorem.paragraph,
-        # file:Faker::File.file_name(dir: 'path/to'),
-        request_date:Faker:Faker::Date.between(from: 3.days.ago, to: Date.today)
-        )
+        request_date:Faker::Date.between(from: 3.years.ago, to: Date.today)
+    )
     leads.save
-
-
-
-
 end
+
 number_and_street = Array["2415 Ch Ste-Foy","110 Grande Allée O","255 Av. Brock S","2250 Rue Guy"]
 suite_or_appartment = Array["2","4","6","12"]
 city = Array["Quebec","Quebec","Montreal","Montreal"]
@@ -28,7 +22,7 @@ postal_code = Array["G1V 1T1","G1R 2G8","H4X 0A3","H3H 2M3"]
 
 for i in 0...number_and_street.length()
     addresses = Address.new(
-        type_of_address:["Home","Buisness","Billing","Shipping","Contact"].sample,
+        type_of_address:["Home","Business","Billing","Shipping","Contact"].sample,
         status:["Verified","Partially","Verified","Unverified","Ambiguous","Conflict","Reverted"].sample,
         entity:["Customer","Lead","Building"].sample,
         country:"Canada",
@@ -41,14 +35,36 @@ for i in 0...number_and_street.length()
     addresses.save
 end
 
+1.times do
+    customers = Customer.create(
+        # user_id:users.id,
+        customer_creation_date:Faker::Date.between(from: 3.years.ago, to: Date.today),
+        company_name:Faker::Company.name,
+        company_contact:Faker::Name.name,
+        company_email:Faker::Internet.email,
+        company_description:Faker::Lorem.paragraph,
+        service_technical_authority_name:Faker::Name.name,
+        technical_authority_phone:Faker::PhoneNumber.phone_number,
+        service_technical_authority_email:Faker::Internet.email,
+        address_id: addresses.id
+    )
+    customers.save
+    # @user = ustomer.create(user_id:users.id)
+end
 
-
-
-
-
-
-
-
+1.times do
+    buildings = Building.create(
+        address_building:addresses.id,
+        name_administrator_building:Faker::Name.name,
+        email_administrator_building:Faker::Internet.email,
+        phone_administrator_building:Faker::PhoneNumber.phone_number,
+        name_technical_building:Faker::Name.name,
+        email_technical_building:Faker::Internet.email,
+        phone_technical_building:Faker::PhoneNumber.phone_number,
+        customer_id: customers.id
+    )
+    buildings.save
+end
 
 first_name = Array["Nicolas","Nadya","Martin","Mathieu","Patrick" ,"David","Mathieu","Thomas","Serge","Francis","Mathieu","David","Nicolas","David","Remi","Timothy","Kiril","Emmanuela","Abdul","Krista","Jonathan"]
 last_name = Array["Genest","Fortier","Chantal","Houde","Thibault","Boutin","Lortie","Carrier","Savoie","Patry-Jessop","Lefrancois","Larochelle","Pineault","Amyot","Gagnon","Wever","Kleinerman","Derilus","Akeeb","Sheely","Murray"]
