@@ -4,7 +4,7 @@
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          has_many :quotes
-         belongs_to :user
+         belongs_to :user, :optional => true
          
 
 
