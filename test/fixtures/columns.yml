@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  BatteryId: MyString
+  Type: MyString
+  Nombre: MyString
+  Statut: MyString
+  Information: MyString
+  Notes: MyString
+
+two:
+  BatteryId: MyString
+  Type: MyString
+  Nombre: MyString
+  Statut: MyString
+  Information: MyString
+  Notes: MyString

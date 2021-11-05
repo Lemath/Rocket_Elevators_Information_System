@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Columns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Batteryid</th>
+      <th>Type</th>
+      <th>Nombre</th>
+      <th>Statut</th>
+      <th>Information</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @columns.each do |column| %>
+      <tr>
+        <td><%= column.BatteryId %></td>
+        <td><%= column.Type %></td>
+        <td><%= column.Nombre %></td>
+        <td><%= column.Statut %></td>
+        <td><%= column.Information %></td>
+        <td><%= column.Notes %></td>
+        <td><%= link_to 'Show', column %></td>
+        <td><%= link_to 'Edit', edit_column_path(column) %></td>
+        <td><%= link_to 'Destroy', column, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Column', new_column_path %>

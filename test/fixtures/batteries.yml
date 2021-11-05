@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Type: MyString
+  Status: MyString
+  EmployeeId: MyString
+  Operation_Certificate: MyString
+  Information: MyString
+  Notes: MyString
+
+two:
+  Type: MyString
+  Status: MyString
+  EmployeeId: MyString
+  Operation_Certificate: MyString
+  Information: MyString
+  Notes: MyString
