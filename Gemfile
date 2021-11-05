@@ -51,7 +51,9 @@ gem 'popper_js', '~> 2.9', '>= 2.9.3'
 gem 'magnific-popup-rails', '~> 1.1'
 gem 'jquery-turbolinks', '~> 2.1'
 
-
+gem 'multiverse'
+gem 'pg'
+gem 'whenever', require: false
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -88,5 +90,9 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem 'faker'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "jquery-datatables", "~> 1.10"

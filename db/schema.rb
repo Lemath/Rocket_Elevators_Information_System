@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_152655) do
+ActiveRecord::Schema.define(version: 2021_11_05_172311) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,25 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "building_id"
+    t.integer "customer_id"
+    t.index ["building_id"], name: "index_addresses_on_building_id"
+    t.index ["customer_id"], name: "index_addresses_on_customer_id"
+  end
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "Type"
+    t.string "Status"
+    t.string "Operation_Certificate"
+    t.string "Information"
+    t.string "Notes"
+    t.timestamp "Informations_Date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "building_id"
+    t.integer "employee_id"
+    t.index ["building_id"], name: "index_batteries_on_building_id"
+    t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -56,7 +75,6 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "address_building"
     t.string "name_administrator_building"
     t.string "email_administrator_building"
     t.string "phone_administrator_building"
@@ -66,10 +84,10 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "customer_id"
+    t.integer "address_id"
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.integer "batteryid"
     t.string "type_of_building"
     t.integer "number_of_floors_served"
     t.string "status"
@@ -77,11 +95,12 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "battery_id"
+    t.index ["battery_id"], name: "index_columns_on_battery_id"
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "user_id"
-    t.string "customer_creation_date"
     t.string "company_name"
     t.string "company_headquarter"
     t.string "company_contact"
@@ -93,10 +112,10 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "address_id"
+    t.string "customer_creation_date"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.integer "columnid"
     t.integer "serial_number"
     t.string "model"
     t.string "type_of_building"
@@ -108,6 +127,8 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "column_id"
+    t.index ["column_id"], name: "index_elevators_on_column_id"
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -143,13 +164,11 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.string "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "residential"
-    t.boolean "commercial"
-    t.boolean "corporate"
-    t.boolean "hybrid"
-    t.string "building_type"
+    t.string "building_type", placeholder: "residential,"
     t.string "string"
     t.integer "user_id"
+    t.string "company_name"
+    t.string "company_email"
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
@@ -159,8 +178,6 @@ ActiveRecord::Schema.define(version: 2021_11_04_152655) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.boolean "admin", default: false
     t.integer "user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
