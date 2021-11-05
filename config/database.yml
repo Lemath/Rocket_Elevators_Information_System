@@ -24,13 +24,14 @@ production: #les infos pour mysql
 postgres_db_development:
   <<: *default
   database: SamaelTessier
-  url: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com" 
+  host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
   adapter: postgresql
   username: codeboxx
   password: Codeboxx1!
+  
 
 postgres_db_production: #les infos pour postgresql
   <<: *default
   database: SamaelTessier
-  url: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com"
+  host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com"
   adapter: postgresql
