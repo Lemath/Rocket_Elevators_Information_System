@@ -3,6 +3,7 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   
+
 development:
   <<: *default
   database: Rocket_Elevators_Information_System_development
@@ -19,8 +20,16 @@ production: #les infos pour mysql
   adapter: mysql2
   socket: /var/run/mysqld/mysqld.sock
 
-production: #les infos pour postgresql test
+postgres_db_development:
   <<: *default
+  database: SamaelTessier
+  host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
+  adapter: postgresql
+  username: codeboxx
+  password: Codeboxx1!
+  
+
+postgres_db_production: #les infos pour postgresql
   database: SamaelTessier
   host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
   adapter: postgresql
