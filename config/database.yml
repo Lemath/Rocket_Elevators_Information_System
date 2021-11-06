@@ -19,7 +19,7 @@ production: #les infos pour mysql
   adapter: mysql2
   socket: /var/run/mysqld/mysqld.sock
 
-postgres_db_production: #les infos pour postgresql
+production: #les infos pour postgresql
   <<: *default
   database: SamaelTessier
   host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
