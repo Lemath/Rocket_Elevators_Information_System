@@ -31,7 +31,7 @@ for i in 0...first_name.length()
     )
  
 end
-1.times do
+25.times do
     leads = Lead.new(
         full_name_contact:Faker::Name.name ,
         company_name:Faker::Company.name,
