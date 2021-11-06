@@ -31,7 +31,7 @@ for i in 0...first_name.length()
     )
  
 end
-1.times do
+550.times do
     leads = Lead.new(
         full_name_contact:Faker::Name.name ,
         company_name:Faker::Company.name,
@@ -114,13 +114,22 @@ end
         )
     elevators.save
 end
-# 1.times do
-#     quotes = Quote.create(
-#         # user_id:column_id,
-#         amount_of_elevator:Faker::Number.between(from: 1, to: 10),
-#         price_per_elevator:Faker::Number.between(from: 1, to: 10),
-#         building_type:["Residential ","Commercial","Corporate","Hybrid"].sample,
-#     )
-#     quotes.save
-#     # @user = ustomer.create(user_id:users.id)
-# end
+1.times do
+    quotes = Quote.create(
+        user_id:column_id,
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+        price_per_elevator:Faker::Number.between(from: 1, to: 10),
+        building_type:["Residential ","Commercial","Corporate","Hybrid"].sample,
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+        amount_of_elevator:Faker::Number.between(from: 1, to: 10),
+    
+    )
+    quotes.save
+    # @user = ustomer.create(user_id:users.id)
+end
