@@ -1,27 +1,4 @@
 require "faker"
-1.times do
-    users = User.new( 
-        email:Faker::Internet.email,
-        password:Faker::Alphanumeric.alphanumeric(number: 6),
-        remember_created_at:Faker::Date.between(from: 3.years.ago, to: Date.today),
-        )
-    users.save
-end
-
-1.times do 
-    leads = Lead.new(
-        full_name_contact:Faker::Name.name ,
-        company_name:Faker::Company.name,
-        email:Faker::Internet.email,
-        phone:Faker::PhoneNumber.phone_number,
-        project_name:Faker::Company.buzzword ,
-        project_description:Faker::Lorem.paragraph,
-        department:["Marketing","Webdesign","Architecture"].sample,
-        message:Faker::Lorem.paragraph,
-        request_date:Faker::Date.between(from: 3.years.ago, to: Date.today)
-    )
-    leads.save
-end
 
 number_and_street = Array["2415 Ch Ste-Foy","110 Grande Allée O","255 Av. Brock S","2250 Rue Guy","1020 Enterprise Way","3201 Jefferson Ave","425 St SW","1050 Côte du Beaver Hall","6869 Boul Métropolitain E","800 Boulevard René-Lévesque O","1800 Owens St","5505 Boul. Saint-Lauren" ]
 suite_or_appartment = Array["2","4","6","12","","","1","","","","","2000"]
@@ -43,10 +20,28 @@ for i in 0...number_and_street.length()
     addresses.save
 end
 
-
 1.times do
+    leads = Lead.new(
+        full_name_contact:Faker::Name.name ,
+        company_name:Faker::Company.name,
+        email:Faker::Internet.email,
+        phone:Faker::PhoneNumber.phone_number,
+        project_name:Faker::Company.buzzword ,
+        project_description:Faker::Lorem.paragraph,
+        department:["Marketing","Webdesign","Architecture"].sample,
+        message:Faker::Lorem.paragraph,
+        request_date:Faker::Date.between(from: 3.years.ago, to: Date.today)
+        )
+    leads.save
+    users = User.new( 
+        email:Faker::Internet.email,
+        password:Faker::Alphanumeric.alphanumeric(number: 6),
+        remember_created_at:Faker::Date.between(from: 3.years.ago, to: Date.today),
+        )
+    users.save
+
     customers = Customer.new(
-        user_id:users.id,
+        user_id: users.id,
         customer_creation_date:Faker::Date.between(from: 3.years.ago, to: Date.today),
         company_name:Faker::Company.name,
         company_contact:Faker::Name.name,
@@ -57,13 +52,30 @@ end
         service_technical_authority_email:Faker::Internet.email,
         address_id: addresses.id
         )
-    
     customers.save
-end
-
-1.times do
+    buildings = Building.new(
+        customer_id: customers.id,
+        address_id: addresses.id,
+        name_administrator_building:Faker::Name.name,
+        email_administrator_building:Faker::Internet.email,
+        phone_administrator_building:Faker::PhoneNumber.phone_number,
+        name_technical_building:Faker::Name.name,
+        email_technical_building:Faker::Internet.email,
+        phone_technical_building:Faker::PhoneNumber.phone_number,
+        )
+    buildings.save
+    batteries = Battery.new(
+        Type:["Residential", "Commercial", "Corporate", "Hybrid"].sample ,
+        Status:["Online","Offline","Moving","Idle"].sample,
+        Operation_Certificate:Faker::Lorem.paragraph,
+        Information:Faker::Lorem.paragraph,
+        Notes:Faker::Lorem.paragraph,
+        building_id:buildings.id,
+        employee_id:employees.id
+        )
+    batteries.save
     columns = Column.new(
-        # batteryid: batteries.id,
+        batteryid: batteries.id,
         type_of_building: ["Residential", "Commercial", "Corporate", "Hybrid"].sample ,
         number_of_floors_served: Faker::Number.between(from: 5, to: 100),
         status:["Online","Online","Online","Online","Online","Online","Online","Online","Online","Offline"].sample ,
@@ -71,22 +83,6 @@ end
         notes:Faker::Lorem.paragraph  ,
         )
     columns.save
-end
-1.times do
-    buildings = Building.new(
-        address_building:addresses.id,
-        name_administrator_building:Faker::Name.name,
-        email_administrator_building:Faker::Internet.email,
-        phone_administrator_building:Faker::PhoneNumber.phone_number,
-        name_technical_building:Faker::Name.name,
-        email_technical_building:Faker::Internet.email,
-        phone_technical_building:Faker::PhoneNumber.phone_number,
-        # customer_id: customers.id
-        )
-    buildings.save
-end
-
-1.times do
     elevators = Elevator.new(
         columnid:columns.id,
         serial_number:Faker::Number.number(digits: 9),
@@ -100,8 +96,16 @@ end
         notes:Faker::Lorem.paragraph
         )
     elevators.save
-    
+    building_details = BuildingDetail.new(
+        information_key: "Contruction Year", 
+        value: Faker::Number.between(from: 1980, to: 2020) ,
+        building_id: buildings.id
+        )
+    building_details.save
+
 end
+
+
 
 
 # 1.times do
@@ -115,14 +119,7 @@ end
 #     # @user = ustomer.create(user_id:users.id)
 # end
 
-1.times do 
-    building_details = BuildingDetail.new(
-        information_key: "Contruction Year", 
-        value: Faker::Number.between(from: 1980, to: 2020) ,
-        building_id: buildings.id
-        )
-    building_details.save
-end 
+
 
 
 
