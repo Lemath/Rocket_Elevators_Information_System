@@ -41,3 +41,5 @@ postgres_db_production:
   <<: *default
   url: <%= ENV['POSTGRES_DB_DATABASE_URL'] %>
   adapter: postgresql
+  username: codeboxx
+  password: Codeboxx1!

@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 2021_11_05_172311) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.string "customer_creation_date"
     t.string "company_name"
     t.string "company_headquarter"
     t.string "company_contact"
@@ -113,6 +112,7 @@ ActiveRecord::Schema.define(version: 2021_11_05_172311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "address_id"
+    t.string "customer_creation_date"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -164,10 +164,6 @@ ActiveRecord::Schema.define(version: 2021_11_05_172311) do
     t.string "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "residential"
-    t.boolean "commercial"
-    t.boolean "corporate"
-    t.boolean "hybrid"
     t.string "building_type"
     t.string "string"
     t.integer "user_id"
