@@ -117,6 +117,8 @@ GEM
     faker (2.19.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.4)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
     globalid (0.5.2)
@@ -332,6 +334,7 @@ DEPENDENCIES
   devise (~> 4.8)
   ed25519 (~> 1.2, >= 1.2.4)
   faker
+  figaro
   font-awesome-rails (~> 4.7, >= 4.7.0.7)
   jbuilder (~> 2.5)
   jquery-datatables (~> 1.10)
@@ -365,4 +368,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.30
+   2.2.31
