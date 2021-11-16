@@ -1,12 +1,16 @@
 class Elevator < ApplicationRecord
     belongs_to :column
+    # belongs_to :column, through: => :batteries
     # rescue_from StandardError do |exception|
     after_save :trigger_sms_alerts, if: proc { saved_change_to_status?(to: 'Intervention') }
     
     
 def trigger_sms_alerts
-    alert_message = "kjhdkfjhdskjhfd"
+    alert_message = "#{self.column.battery.building.name_technical_building}
+    the elevator located at #{self.column.battery.building.address.number_and_street} serial number:#{self.serial_number} need your intervention  "
     admins = YAML.load_file('config/administrators.yml')
+    # admins = YAML.load_file('config/database.yml')
+
     admins.each do |admin|
       begin
         phone_number = admin['phone_number']
