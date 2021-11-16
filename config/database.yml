@@ -10,7 +10,7 @@ development:
   adapter: mysql2
   socket: /var/run/mysqld/mysqld.sock
   username: root  
-  password: rootuser
+  password: root1234
 
 production: #les infos pour mysql
   <<: *default
