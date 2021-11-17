@@ -60,7 +60,7 @@ gem 'slack-notifier'
 
 gem 'ed25519', '~> 1.2', '>= 1.2.4'
 gem 'bcrypt_pbkdf', '~> 1.0.0.alpha1'
-gem 'ibm_watson'
+gem 'google-cloud-text_to_speech', '~> 1.2', '>= 1.2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
