@@ -22,6 +22,12 @@ gem 'devise', '~> 4.8'
 
 gem 'chartkick', '~> 4.1'
 
+gem 'figaro'
+
+gem 'excon'
+
+gem 'sendgrid-ruby'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -51,7 +57,7 @@ gem 'popper_js', '~> 2.9', '>= 2.9.3'
 gem 'magnific-popup-rails', '~> 1.1'
 gem 'jquery-turbolinks', '~> 2.1'
 
-gem 'multiverse'
+gem 'secondbase'
 gem 'pg'
 gem 'whenever', require: false
 
