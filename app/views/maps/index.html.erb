@@ -19,30 +19,40 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY']%>&callback=initMap"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
+    
     geocode();
     function geocode(){
-        
-        @location = Building.all
+        var buildings = '<%= @building_list %>' 
+        console.log(buildings)
         axios.get("https://maps.googleapis.com/maps/api/geocode/json?&key=<%= ENV['GOOGLE_API_KEY']%>",{
             params:{
-                address:@location
+                address: location
             }
+            
         })
         .then(function(response){
             console.log(response);
             var coords = response.data.results[0].geometry.location;
+            var lat = response.data.results[0].geometry.location.lat;
+            var lng = response.data.results[0].geometry.location.lng;
+            console.log(coords);
+            var buildingsComponents = response.data.results[0].buildingsComponents;
+            for(var i = 0;i < buildingsComponents.length;){
+            
+            }
 
             
         })
         .catch(function(error){
             console.log(error);
         });
+        
     }
 
 </script>
 <body>
     
-    <div id="map" style="height:600px"></div>
+    <div id="map" style="height:800px"></div>
     
 </body>
 </html>

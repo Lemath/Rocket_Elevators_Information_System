@@ -31,6 +31,7 @@ function initMap(){
     // Array of markers
     var markers = [
         {
+        
         coords:{lat:42.4668,lng:-70.9495},
         // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
         content:'<h1>Lynn MA</h1>'
@@ -54,7 +55,7 @@ function initMap(){
     function addMarker(props){
         var marker = new google.maps.Marker({
         position:props.coords,
-        map:map,
+        map:map
         //icon:props.iconImage
         });
 
@@ -76,5 +77,7 @@ function initMap(){
         }
     }
 }
+
+
     
 
