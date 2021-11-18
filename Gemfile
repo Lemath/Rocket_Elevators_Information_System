@@ -99,3 +99,4 @@ gem "jquery-datatables", "~> 1.10"
 
 gem "twilio-ruby"
 gem 'figaro'
+gem "zendesk_api"
