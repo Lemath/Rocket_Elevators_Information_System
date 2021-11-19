@@ -9,6 +9,7 @@ class MapsController < ApplicationController
         @nb_elevators = []
         @tech_name = []
 
+
         Building.all.each do |building|
         f=0
         x=0
@@ -17,21 +18,14 @@ class MapsController < ApplicationController
         @location.push(building.address.number_and_street)
         @names.push(building.customer.company_contact)
         @tech_name.push(building.name_technical_building)
-        x = x + building.batteries.count
+        @nb_columns.push(building.batteries.count)
             building.batteries.all.each do |battery|
-                y = y + battery.columns.count
+                @nb_batteries.push(battery.columns.count)
                 battery.columns.all.each do |column|
-                    f = f + column.number_of_floors_served
-                    z = z + column.elevators.count
-                    
-
+                    @floors.push(column.number_of_floors_served)
+                    @nb_elevators.push(column.elevators.count)
                 end
-                @nb_columns.push(x)
-                @nb_batteries.push(y)
-                @floors.push(f)
-                @nb_elevators.push(z)
             end
-            
         end
         @location 
         @floors 

@@ -41,13 +41,17 @@
         var location = '<%= raw @location %>';
         var location_split = location.split(',');
 	    var floors = '<%= @floors %>';
+        var floors_split = floors.split(',');
 	    var names= '<%= raw @names %>';
         var names_split = names.split(',');
 	    var nb_batteries=  '<%= @nb_batteries %>';
-        var nb_columns= '<%= @nb_columns %>'; 
+        var batteries_split = nb_batteries.split(',');
+        var nb_columns= '<%= @nb_columns %>';
+        var columns_split = nb_columns.split(','); 
 	    var nb_elevators =  '<%= @nb_elevators %>';
+        var elevators_split = nb_elevators.split(',');
 	    var tech_name =  '<%= raw @tech_name %>';
-        var tech_name_split = tech_name.split(',');
+        var tech_name_split = tech_name .split(',');
         
         console.log(floors);
         console.log(names_split);
@@ -73,7 +77,9 @@
                 
                 addMarker({
                     coords: {lat: lat , lng: lng},
-                    content: ('<h6> Client Name:</h6>' + names_split[i]+'<h6> Location:</h6>' + location_split[i] +'<h6> Tech Name:</h6>' + tech_name_split[i]
+                    content: ('<h6> Client Name:</h6>' + names_split[i]+'<h6> Location:</h6>' + location_split[i] +'<h6> Tech Name:</h6>' + tech_name_split[i] 
+                    + '<h6> Floors:</h6>' + floors_split[i] + '<h6> Columns:</h6>' + columns_split[i] + '<h6> Batteries:</h6>' + batteries_split[i] +
+                    '<h6> Elevators:</h6>' + elevators_split[i]
 
                     )
                 });
