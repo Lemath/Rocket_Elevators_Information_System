@@ -87,13 +87,17 @@ class QuotesController < ApplicationController
     end
     
     ZendeskAPI::Ticket.new(client, :id => 1, :priority => "urgent") # doesn't actually send a request, must explicitly call #save!
-    ZendeskAPI::Ticket.create!(client, :type => "task", :subject => " #{@quote.full_name} from #{@quote.company_name}", :comment => { :value =>
-      "The contact #{@quote.full_name} from company from #{@quote.company_name} can be reached at email #{@quote.company_email} and at phone number #{@quote.phone}. #{@quote.department} has a project named #{@quote.project_name} which would require contribution from Rocket Elevators. 
-      #{@quote.project_description}
-      Attached Message: #{@quote.message}
-      The Contact uploaded an attachment"
-      
-      }, :submitter_id => current_user.id, :priority => "urgent")
+    ZendeskAPI::Ticket.create!(client, :type => "task", :subject => " The company #{@quote.company_name}", :comment => { :value =>
+        "The company #{@quote.company_name} has made a quote for a building of type #{@quote.building_type} and wants the #{@quote.type_of_service} service. 
+          Quote information: 
+          Amount of elevators needed: #{@quote.amount_of_elevator}
+          Price per elevator: #{@quote.price_per_elevator}
+          Total price of the elevators: #{@quote.total_price_of_elevator}
+          Installation price: #{@quote.installation}
+          Total price: #{@quote.total_price}
+          The company #{@quote.company_name} can be reached at #{@quote.company_email}."
+    
+          }, :submitter_id => current_user.id, :priority => "urgent")
     # ZendeskAPI::Ticket.find!(client, :id => 1)
     # ZendeskAPI::Ticket.destroy!(client, :id => 1)
 
@@ -129,6 +133,8 @@ class QuotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quote_params
-      params.require(:quote).permit(:amount_of_elevator, :price_per_elevator, :total_price_of_elevator, :installation, :total_price, :building_type, :user_id, :full_name, :company_name, :phone, :company_email, :department, :company_name, :project_name, :project_description, :message )
+      params.require(:quote).permit(:amount_of_elevator, :price_per_elevator, :total_price_of_elevator, :installation, :total_price, :building_type, :user_id, :company_name, :company_email, :type_of_service)
     end
 end
+
+

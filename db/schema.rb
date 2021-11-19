@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_021823) do
+ActiveRecord::Schema.define(version: 2021_11_19_143748) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(version: 2021_11_19_021823) do
     t.string "project_name"
     t.string "project_description"
     t.string "message"
+    t.string "type_of_service"
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
