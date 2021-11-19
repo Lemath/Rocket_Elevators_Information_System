@@ -41,5 +41,6 @@ def trigger_sms_alerts
       # media_url: image_url
     )
   end
+
 end
 

@@ -51,15 +51,16 @@ gem 'popper_js', '~> 2.9', '>= 2.9.3'
 gem 'magnific-popup-rails', '~> 1.1'
 gem 'jquery-turbolinks', '~> 2.1'
 
-gem 'multiverse'
+gem 'secondbase'
 gem 'pg'
 gem 'whenever', require: false
-
+gem 'figaro'
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'slack-notifier'
 
 gem 'ed25519', '~> 1.2', '>= 1.2.4'
 gem 'bcrypt_pbkdf', '~> 1.0.0.alpha1'
+gem 'google-cloud-text_to_speech', '~> 1.2', '>= 1.2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
