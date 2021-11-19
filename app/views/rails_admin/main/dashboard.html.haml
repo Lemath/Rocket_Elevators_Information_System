@@ -39,7 +39,7 @@
       $.ajax({
         type: 'GET',
         url: '/voice_report/report',
-        success:function(response) {
+        success:function() {
           report = new Audio();
           report.src = '/output/output.mp3' 
           const promise = report.play();
