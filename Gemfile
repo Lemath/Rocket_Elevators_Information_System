@@ -54,7 +54,6 @@ gem 'jquery-turbolinks', '~> 2.1'
 gem 'secondbase'
 gem 'pg'
 gem 'whenever', require: false
-gem 'figaro'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'slack-notifier'
 
