@@ -2,6 +2,7 @@ class QuotesController < ApplicationController
   # before_action :set_quote, only: %i[ show edit update destroy ]
   before_action :set_quote, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  require 'zendesk_api'
 
   # GET /quotes or /quotes.json
   def index
@@ -34,6 +35,68 @@ class QuotesController < ApplicationController
         format.json { render json: @quote.errors, status: :unprocessable_entity }
       end
     end
+
+    client = ZendeskAPI::Client.new do |config|
+      # Mandatory:
+    
+      config.url = "https://apexrockets.zendesk.com/api/v2" # e.g. https://yoursubdomain.zendesk.com/api/v2
+    
+      # Basic / Token Authentication
+      config.username = "apexrocketelevators@gmail.com"
+    
+      # Choose one of the following depending on your authentication choice
+      # config.token = ENV['ZENDESK_CONFIG_TOKEN']
+      config.password = ENV['ZENDESK_PASSWORD']
+    
+      # # OAuth Authentication
+      # config.access_token = ENV['ZENDESK_ACCESS_TOKEN']
+
+      # Optional:
+    
+      # Retry uses middleware to notify the user
+      # when hitting the rate limit, sleep automatically,
+      # then retry the request.
+      config.retry = true
+    
+      # Raise error when hitting the rate limit.
+      # This is ignored and always set to false when `retry` is enabled.
+      # Disabled by default.
+      config.raise_error_when_rate_limited = false
+    
+      # Logger prints to STDERR by default, to e.g. print to stdout:
+      require 'logger'
+      config.logger = Logger.new(STDOUT)
+    
+      # Disable resource cache (this is enabled by default)
+      config.use_resource_cache = false
+    
+      # Changes Faraday adapter
+      # config.adapter = :patron
+    
+      # Merged with the default client options hash
+      # config.client_options = {:ssl => {:verify => false}, :request => {:timeout => 30}}
+    
+      # When getting the error 'hostname does not match the server certificate'
+      # use the API at https://yoursubdomain.zendesk.com/api/v2
+    
+      # Change retry configuration (this is disabled by default)
+      config.retry_on_exception = true
+    
+      # Error codes when the request will be automatically retried. Defaults to 429, 503
+      config.retry_codes = [ 429 ]
+    end
+    
+    ZendeskAPI::Ticket.new(client, :id => 1, :priority => "urgent") # doesn't actually send a request, must explicitly call #save!
+    ZendeskAPI::Ticket.create!(client, :type => "task", :subject => " #{@quote.full_name} from #{@quote.company_name}", :comment => { :value =>
+      "The contact #{@quote.full_name} from company from #{@quote.company_name} can be reached at email #{@quote.company_email} and at phone number #{@quote.phone}. #{@quote.department} has a project named #{@quote.project_name} which would require contribution from Rocket Elevators. 
+      #{@quote.project_description}
+      Attached Message: #{@quote.message}
+      The Contact uploaded an attachment"
+      
+      }, :submitter_id => current_user.id, :priority => "urgent")
+    # ZendeskAPI::Ticket.find!(client, :id => 1)
+    # ZendeskAPI::Ticket.destroy!(client, :id => 1)
+
   end
 
   # PATCH/PUT /quotes/1 or /quotes/1.json
@@ -66,6 +129,6 @@ class QuotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quote_params
-      params.require(:quote).permit(:amount_of_elevator, :price_per_elevator, :total_price_of_elevator, :installation, :total_price, :building_type, :user_id)
+      params.require(:quote).permit(:amount_of_elevator, :price_per_elevator, :total_price_of_elevator, :installation, :total_price, :building_type, :user_id, :full_name, :company_name, :phone, :company_email, :department, :company_name, :project_name, :project_description, :message )
     end
 end

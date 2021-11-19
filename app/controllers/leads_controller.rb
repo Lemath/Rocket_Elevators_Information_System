@@ -85,7 +85,7 @@ class LeadsController < ApplicationController
     end
     
     ZendeskAPI::Ticket.new(client, :id => 1, :priority => "urgent") # doesn't actually send a request, must explicitly call #save!
-    ZendeskAPI::Ticket.create!(client, :subject => " #{@lead.full_name_contact} from #{@lead.company_name}", :comment => { :value =>
+    ZendeskAPI::Ticket.create!(client, :type => "question", :subject => " #{@lead.full_name_contact} from #{@lead.company_name}", :comment => { :value =>
       "The contact #{@lead.full_name_contact} from company from #{@lead.company_name} can be reached at email #{@lead.email} and at phone number #{@lead.phone}. #{@lead.department} has a project named #{@lead.project_name} which would require contribution from Rocket Elevators. 
       #{@lead.project_description}
       Attached Message: #{@lead.message}

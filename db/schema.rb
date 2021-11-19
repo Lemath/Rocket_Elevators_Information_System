@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_05_172311) do
+ActiveRecord::Schema.define(version: 2021_11_19_021823) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -165,10 +165,15 @@ ActiveRecord::Schema.define(version: 2021_11_05_172311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "building_type"
-    t.string "string"
     t.integer "user_id"
     t.string "company_name"
     t.string "company_email"
+    t.string "full_name"
+    t.string "phone"
+    t.string "department"
+    t.string "project_name"
+    t.string "project_description"
+    t.string "message"
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
