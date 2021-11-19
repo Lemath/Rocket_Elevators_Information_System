@@ -6,6 +6,7 @@
 
 sendgrid.env
 application.yml
+database.yml
 
 # Ignore bundler config.
 /.bundle
