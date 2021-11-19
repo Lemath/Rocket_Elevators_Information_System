@@ -3,7 +3,7 @@ class Elevator < ApplicationRecord
     # belongs_to :column, through: => :batteries
     # rescue_from StandardError do |exception|
     after_save :trigger_sms_alerts, if: proc { saved_change_to_status?(to: 'Intervention') }
-    
+    after_save :send_change_to_slack, if: proc { saved_change_to_status? } 
     
 def trigger_sms_alerts
     alert_message = "#{self.column.battery.building.name_technical_building}
@@ -41,6 +41,10 @@ def trigger_sms_alerts
       # media_url: image_url
     )
   end
+
+    def status_enum
+        ['Offline', 'Online', 'Intervention']
+    end 
 
 end
 
