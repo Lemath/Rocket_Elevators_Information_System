@@ -19,10 +19,11 @@ class MapsController < ApplicationController
         @names.push(building.customer.company_contact)
         @tech_name.push(building.name_technical_building)
         @nb_columns.push(building.batteries.count)
+        
             building.batteries.all.each do |battery|
                 @nb_batteries.push(battery.columns.count)
                 battery.columns.all.each do |column|
-                    @floors.push(column.number_of_floors_served)
+                    @floors.push(building.building_detail.number_of_floors)
                     @nb_elevators.push(column.elevators.count)
                 end
             end
