@@ -1,7 +1,11 @@
 class LeadsController < ApplicationController
   before_action :set_lead, only: %i[ show edit update destroy ]
   require 'zendesk_api'
+  require 'sendgrid-ruby'
+  include SendGrid
+  require 'json'
 
+  
   # GET /leads or /leads.json
   def index
     @leads = Lead.all
@@ -20,9 +24,6 @@ class LeadsController < ApplicationController
   def edit
   end
 
-  require 'sendgrid-ruby'
-  include SendGrid
-  require 'json'
 
   # POST /leads or /leads.json
   def create

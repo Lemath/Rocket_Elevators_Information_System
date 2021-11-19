@@ -1,21 +1,15 @@
-
 default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-<<<<<<< HEAD
-
-=======
   username: root
   password: rootuser
   
->>>>>>> 6d8c4bde6fb5463a0a9e3478767a40e4ad190b2e
 
 development:
   <<: *default
   database: Rocket_Elevators_Information_System_development
   adapter: mysql2
   socket: /var/run/mysqld/mysqld.sock
-<<<<<<< HEAD
   username: root  
   password: root1234
 
@@ -26,16 +20,6 @@ test:
   socket: /var/run/mysqld/mysqld.sock
 
 
-=======
-
-test:
-  <<: *default
-  database: Rocket_Elevators_Information_System_test
-  adapter: mysql2
-  socket: /var/run/mysqld/mysqld.sock
-
-
->>>>>>> 6d8c4bde6fb5463a0a9e3478767a40e4ad190b2e
 production:
   <<: *default
   database: Rocket_Elevators_Information_System_production
@@ -49,13 +33,8 @@ secondbase:
     <<: *default
     database: postgres_db_development
     adapter: postgresql
-<<<<<<< HEAD
-    
-    test:
-=======
 
   test:
->>>>>>> 6d8c4bde6fb5463a0a9e3478767a40e4ad190b2e
     <<: *default
     database: postgres_db_test
     adapter: postgresql
