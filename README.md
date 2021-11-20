@@ -6,6 +6,7 @@ This week we added API to the web site making it more complete and functional fo
 We've add 7 API.
 
 Google Maps
+
 To make a dynamiq map, in order to geolocate our customers on a map and display statistics on a location with the Location of the Building, Number of floors in the building  ,Client name, Number of Batteries, Columns and Elevator and Full name of technical contact.
 To add a marker to the map you just need to link the address to the building in the BackOffice.
 
@@ -23,7 +24,7 @@ Dropbox API and its online storage allows storage to be done in a simple and fle
 When a contact becomes a customer, the attached file will extract from the database and stored in your DropBox directory.
 
 Sendgrid
-Sendgrid
+
 Sendgrid is a historic and essential service provider in the field of email communication. It allows emails to be sent to a base of users who have authorized transactional communications at the time of their registration.
 
 For Rocket Elevators, one use case to implement is sending a thank you email automatically when a contact completes the "Contact Us" form on the Rocket Elevators website. The form is saved with the email field to use. 
@@ -34,6 +35,7 @@ Google Cloud application provides developers with many services. Among the most 
 The AI will make an audio file that you can listen with alot of info that you provide trough the database.
 
 Zendesk
+
 When the time comes to deliver quality customer service, managing customer requests should never leave a contact unanswered and ensure reasonable processing times. This is often the first of future customers.
 
 ZenDesk is a SaaS platform to which you can subscribe and which allows you to manage the workflow that takes place when a customer comes into contact via the Website either via the “Contact Us” form or also via the “Get a Quote” form. ”In both cases, a ticket must be created in ZenDesk in the same way as a recording is added in the information system.
