@@ -22,8 +22,6 @@ gem 'devise', '~> 4.8'
 
 gem 'chartkick', '~> 4.1'
 
-gem 'figaro'
-
 gem 'excon'
 
 gem 'sendgrid-ruby'
