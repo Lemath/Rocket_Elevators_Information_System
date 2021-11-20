@@ -104,3 +104,4 @@ gem "jquery-datatables", "~> 1.10"
 gem "twilio-ruby"
 gem "zendesk_api"
 gem 'capistrano-passenger'
+gem 'figaro'
