@@ -31,7 +31,7 @@ for i in 0...first_name.length()
     )
  
 end
-75.times do
+10.times do
     leads = Lead.new(
         full_name_contact:Faker::Name.name ,
         company_name:Faker::Company.name,
@@ -77,11 +77,16 @@ end
     building_details = BuildingDetail.new(
         information_key: "Contruction Year", 
         value: Faker::Number.between(from: 1980, to: 2020) ,
-        building_id: buildings.id
+        building_id: buildings.id,
+        number_of_floors: Faker::Number.between(from: 5, to: 100),
+        
+        department: leads.department ,
+        year_of_contruction:Faker::Number.between(from: 1980, to: 2020) ,
+        maximum_number_of_occupants: Faker::Number.between(from: 5, to: 200),
         )
     building_details.save
     batteries = Battery.new(
-        Type:["Residential", "Commercial", "Corporate", "Hybrid"].sample ,
+        Type:["Residential", "Commercial", "Corporate", "Hybrid"].sample,
         Status:["Online","Offline","Moving","Idle"].sample,
         Operation_Certificate:Faker::Lorem.paragraph,
         Information:Faker::Lorem.paragraph,
