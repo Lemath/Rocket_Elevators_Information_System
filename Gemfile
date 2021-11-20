@@ -104,5 +104,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "jquery-datatables", "~> 1.10"
 
 gem "twilio-ruby"
-gem 'figaro'
 gem "zendesk_api"
+gem 'capistrano-passenger'
