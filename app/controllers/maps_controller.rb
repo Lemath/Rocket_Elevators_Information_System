@@ -11,14 +11,14 @@ class MapsController < ApplicationController
 
 
         Building.all.each do |building|
-        f=0
-        x=0
-        y=0
-        z=0
-        @location.push(building.address.number_and_street)
-        @names.push(building.customer.company_contact)
-        @tech_name.push(building.name_technical_building)
-        @nb_columns.push(building.batteries.count)
+            f=0
+            x=0
+            y=0
+            z=0
+            @location.push(building.address.number_and_street)
+            @names.push(building.customer.company_contact)
+            @tech_name.push(building.name_technical_building)
+            @nb_columns.push(building.batteries.count)
         
             building.batteries.all.each do |battery|
                 @nb_batteries.push(battery.columns.count)
