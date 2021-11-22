@@ -10,8 +10,6 @@ development:
   database: Rocket_Elevators_Information_System_development
   adapter: mysql2
   socket: /var/run/mysqld/mysqld.sock
-  username: root  
-  password: root1234
 
 test:
   <<: *default
