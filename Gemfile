@@ -22,8 +22,6 @@ gem 'devise', '~> 4.8'
 
 gem 'chartkick', '~> 4.1'
 
-gem 'figaro'
-
 gem 'excon'
 
 gem 'sendgrid-ruby'
@@ -104,5 +102,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "jquery-datatables", "~> 1.10"
 
 gem "twilio-ruby"
-gem 'figaro'
 gem "zendesk_api"
+gem 'capistrano-passenger'
+gem 'figaro'
