@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :fact_interventions
   get 'voice_report/report'
   resources :elevators
   resources :columns
