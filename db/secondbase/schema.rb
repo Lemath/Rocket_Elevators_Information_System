@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_143026) do
+ActiveRecord::Schema.define(version: 2021_11_25_202554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(version: 2021_11_23_143026) do
     t.integer "battery_id"
     t.integer "column_id"
     t.integer "elevator_id"
-    t.datetime "started_at"
-    t.datetime "finish_at"
+    t.datetime "intervention_start_date_time"
+    t.datetime "intervention_end_date_time"
     t.string "result"
     t.string "report"
     t.string "status_opt"
