@@ -2,13 +2,15 @@
 default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: lemath   
-  password: kintaro1
+  username: codeboxx   
+  password: Codeboxx1!
 
 development:
   <<: *default
-  database: Rocket_Elevators_Information_System_development
+  database: SamaelTessier
+  host: codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com
   adapter: mysql2
+  port: 3306
   socket: /var/run/mysqld/mysqld.sock
   
 secondbase:
@@ -17,7 +19,7 @@ secondbase:
     database: SamaelTessier
     host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
     adapter: postgresql
-    username: codeboxx
-    password: Codeboxx1!
+    port: 5432
+    
   
 
