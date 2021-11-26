@@ -12,7 +12,7 @@ To add a marker to the map you just need to link the address to the building in 
 
 Twilio API
 
-If the status of an Elevator in the database changes to "Intervention" status, the building's technical contact will be identified and an SMS will be sent to the telephone number associated with this contact.
+If the status of an Elevator in the database changes to "Intervention" status, the building's technical contact will be identified and an SMS will be sent to the telephone number associated with this contact. You can put the phone number in config/administrators.yml.
 
 Slack
 
@@ -28,9 +28,8 @@ When a contact becomes a customer, the attached file will extract from the datab
 
 Sendgrid
 
-Sendgrid is a historic and essential service provider in the field of email communication. It allows emails to be sent to a base of users who have authorized transactional communications at the time of their registration.
-
-For Rocket Elevators, one use case to implement is sending a thank you email automatically when a contact completes the "Contact Us" form on the Rocket Elevators website. The form is saved with the email field to use. 
+Sendgrid is a historic and essential service provider in the field of email communication.
+For Rocket Elevators, one use case to implement is sending a thank you email automatically when a contact completes the "Contact Us" form on the Rocket Elevators website. 
 
 Google Cloud
 
@@ -44,6 +43,13 @@ When the time comes to deliver quality customer service, managing customer reque
 
 ZenDesk is a SaaS platform to which you can subscribe and which allows you to manage the workflow that takes place when a customer comes into contact via the Website either via the “Contact Us” form or also via the “Get a Quote” form. ”In both cases, a ticket must be created in ZenDesk in the same way as a recording is added in the information system.
 
-
+Zendesk Console ticket
+to get access to the console
+	url: apexrockets.zendesk.com
+	email: apexrocketelevators@gmail.com
+	password: newmoon2021!
+Admin 
+user: admin@apexrockets.com
+mdp: 123456
 
 -New_moon
