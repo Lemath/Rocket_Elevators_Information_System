@@ -11,6 +11,7 @@ class FactContact < SecondBase::Base
       if fact.dim_time_id == nil
         fact.dim_time_id = DimTime.buildDimension(fact.ContactId, "contact")  
       end
+      puts "Contact fact #{fact.id} created successfully"
       fact.save
     end
   end
