@@ -10,6 +10,7 @@ class DimTime < SecondBase::Base
     dimension.month = form.created_at.month
     dimension.day = form.created_at.day
     dimension.form_type = form_type
+    puts "Time dimension #{dimension.id} created successfully"
     dimension.save
     return dimension.id
   end

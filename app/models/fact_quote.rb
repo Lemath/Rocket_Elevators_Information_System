@@ -11,6 +11,7 @@ class FactQuote < SecondBase::Base
       if fact.dim_time_id == nil
         fact.dim_time_id = DimTime.buildDimension(fact.QuoteId, "quote")
       end
+      puts "Quote fact #{fact.id} created successfully"
       fact.save
     end
   end

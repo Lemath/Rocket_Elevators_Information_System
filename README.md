@@ -48,7 +48,8 @@ to get access to the console
 	url: apexrockets.zendesk.com
 	email: apexrocketelevators@gmail.com
 	password: newmoon2021!
-
-
+Admin 
+user: admin@apexrockets.com
+mdp: 123456
 
 -New_moon

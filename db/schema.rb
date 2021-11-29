@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_143748) do
+ActiveRecord::Schema.define(version: 2021_11_27_062104) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_11_19_143748) do
     t.datetime "updated_at", null: false
     t.integer "building_id"
     t.integer "employee_id"
+    t.datetime "Creation_Date"
+    t.datetime "Last_Inspect"
     t.index ["building_id"], name: "index_batteries_on_building_id"
     t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
@@ -72,6 +74,11 @@ ActiveRecord::Schema.define(version: 2021_11_19_143748) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "building_id"
+    t.string "number_of_floors"
+    t.string "department"
+    t.string "year_of_contruction"
+    t.string "maximum_number_of_occupants"
+    t.string "building_type"
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -164,17 +171,15 @@ ActiveRecord::Schema.define(version: 2021_11_19_143748) do
     t.string "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "residential"
+    t.boolean "commercial"
+    t.boolean "corporate"
+    t.boolean "hybrid"
     t.string "building_type"
+    t.string "string"
     t.integer "user_id"
     t.string "company_name"
     t.string "company_email"
-    t.string "full_name"
-    t.string "phone"
-    t.string "department"
-    t.string "project_name"
-    t.string "project_description"
-    t.string "message"
-    t.string "type_of_service"
     t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 

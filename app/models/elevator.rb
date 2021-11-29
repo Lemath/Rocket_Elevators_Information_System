@@ -2,8 +2,8 @@ class Elevator < ApplicationRecord
     belongs_to :column
     # belongs_to :column, through: => :batteries
     # rescue_from StandardError do |exception|
-    after_save :send_change_to_slack, if: proc { saved_change_to_status? } 
-    after_save :trigger_sms_alerts, if: proc { saved_change_to_status?(to: 'Intervention') }
+    # after_save :send_change_to_slack, if: proc { saved_change_to_status? } 
+    # after_save :trigger_sms_alerts, if: proc { saved_change_to_status?(to: 'Intervention') }
     
 
 
